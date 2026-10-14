@@ -231,22 +231,25 @@ main.content > .outer { margin-top: 116px; margin-bottom: 100px; }
 .tocbot .toc-list { list-style: none; }
 .tocbot .toc-list-item { margin: 6px 0; line-height: 1.6; }
 .tocbot a.toc-link { display: block; overflow-wrap: anywhere; }
-/* Keep the lens outside .article-inner: backdrop-filter contains fixed children.
-   Reserve a right column only on post pages that actually have headings. */
+/* Center the article itself; the directory occupies the remaining right margin.
+   Keep the lens outside .article-inner, which contains fixed children. */
+main.content > .outer:has(> .article) { margin-left: auto; margin-right: auto; }
 @media (min-width: 1101px) {
   main.content {
-    --toc-post-width: min(900px, calc(100vw - 448px));
-    --toc-post-left: max(136px, calc((100vw - 1164px) / 2));
+    --toc-post-width: min(900px, calc(100vw - 456px));
   }
   main.content > .outer:has(> .article > .tocbot) {
     width: var(--toc-post-width) !important;
-    margin-left: var(--toc-post-left); margin-right: auto;
   }
   .tocbot {
-    position: fixed; left: calc(var(--toc-post-left) + var(--toc-post-width) + 24px);
-    top: 116px; width: 240px; max-height: calc(100dvh - 260px);
+    position: fixed; left: calc(50vw + var(--toc-post-width) / 2 + 24px);
+    top: 116px; width: min(240px, calc((100vw - var(--toc-post-width)) / 2 - 48px));
+    max-height: calc(100dvh - 260px);
     margin: 0; z-index: 996;
   }
+}
+@media (min-width: 769px) and (max-width: 1100px) {
+  main.content > .outer:has(> .article) { width: calc(100% - 272px) !important; }
 }
 a.toc-link { color: var(--c-muted); }
 a.is-active-link { color: var(--c-action); }
