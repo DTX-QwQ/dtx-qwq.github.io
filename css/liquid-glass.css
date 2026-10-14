@@ -219,7 +219,35 @@ main.content > .outer { margin-top: 116px; margin-bottom: 100px; }
 .article-nav-link { float: none !important; width: 50%; border-radius: 24px; padding: 20px 24px; background-color: var(--glass-reading); }
 .article-nav-caption { color: var(--c-muted); font-size: 12px; }
 .article-nav-title { color: var(--c-content); font-size: 15px; margin-top: 6px; }
-.tocbot, .tocbot.is-position-fixed { position: relative !important; right: auto; top: auto; max-width: none; max-height: 230px; overflow-y: auto; background: transparent; border-radius: 18px; border: 1px solid var(--glass-line); margin: 22px 0; padding: 18px; opacity: 1; }
+.tocbot {
+  position: relative; right: auto; top: auto; width: auto; max-width: none;
+  max-height: 300px; box-sizing: border-box; overflow-y: auto;
+  overscroll-behavior: contain; scrollbar-width: thin;
+  background-color: var(--glass-reading); border-radius: 24px;
+  margin: 0 0 22px; padding: 20px; opacity: 1;
+}
+.tocbot::before { content: "文章目录"; display: block; margin-bottom: 12px; color: var(--c-content); font-size: 15px; font-weight: 650; }
+.tocbot > .toc-list { margin: 0; padding-left: 12px; }
+.tocbot .toc-list { list-style: none; }
+.tocbot .toc-list-item { margin: 6px 0; line-height: 1.6; }
+.tocbot a.toc-link { display: block; overflow-wrap: anywhere; }
+/* Keep the lens outside .article-inner: backdrop-filter contains fixed children.
+   Reserve a right column only on post pages that actually have headings. */
+@media (min-width: 1101px) {
+  main.content {
+    --toc-post-width: min(900px, calc(100vw - 448px));
+    --toc-post-left: max(136px, calc((100vw - 1164px) / 2));
+  }
+  main.content > .outer:has(> .article > .tocbot) {
+    width: var(--toc-post-width) !important;
+    margin-left: var(--toc-post-left); margin-right: auto;
+  }
+  .tocbot {
+    position: fixed; left: calc(var(--toc-post-left) + var(--toc-post-width) + 24px);
+    top: 116px; width: 240px; max-height: calc(100dvh - 260px);
+    margin: 0; z-index: 996;
+  }
+}
 a.toc-link { color: var(--c-muted); }
 a.is-active-link { color: var(--c-action); }
 .toc-link::before { background: var(--glass-line); }

@@ -120,9 +120,7 @@
         headingSelector: 'h1, h2, h3, h4, h5, h6', hasInnerContainers: true,
         // Navigation owns hash scrolling and history; do not install Tocbot's
         // additional document click listener every time the article changes.
-        scrollSmooth: false, scrollContainer: 'main',
-        positionFixedSelector: '.tocbot', positionFixedClass: 'is-position-fixed',
-        fixedSidebarOffset: 'auto'
+        scrollSmooth: false, scrollContainer: 'main', headingsOffset: 24
       });
     }
     if (window.jQuery) {
