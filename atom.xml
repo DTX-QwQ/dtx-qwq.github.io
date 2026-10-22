@@ -6,7 +6,7 @@
   <link href="https://blog.dtx-qwq.xyz/atom.xml" rel="self"/>
   
   <link href="https://blog.dtx-qwq.xyz/"/>
-  <updated>2026-10-18T14:05:06.061Z</updated>
+  <updated>2026-10-22T02:49:44.004Z</updated>
   <id>https://blog.dtx-qwq.xyz/</id>
   
   <author>
@@ -21,16 +21,11 @@
     <link href="https://blog.dtx-qwq.xyz/2026/10/16/%E5%9F%BA%E4%BA%8E%E9%9B%B6%E6%88%90%E6%9C%AC%E5%87%86%E5%85%A5%E6%9C%BA%E5%88%B6%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A1%A3%E7%89%A9%E6%B8%85%E6%B4%81%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8%E5%85%A8%E5%91%A8%E6%9C%9F%E6%93%8D%E4%BD%9C%E8%A7%84%E8%8C%83%E7%A0%94%E7%A9%B6%E6%8C%87%E5%8D%97/Fake-Location/"/>
     <id>https://blog.dtx-qwq.xyz/2026/10/16/%E5%9F%BA%E4%BA%8E%E9%9B%B6%E6%88%90%E6%9C%AC%E5%87%86%E5%85%A5%E6%9C%BA%E5%88%B6%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A1%A3%E7%89%A9%E6%B8%85%E6%B4%81%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8%E5%85%A8%E5%91%A8%E6%9C%9F%E6%93%8D%E4%BD%9C%E8%A7%84%E8%8C%83%E7%A0%94%E7%A9%B6%E6%8C%87%E5%8D%97/Fake-Location/</id>
     <published>2026-10-16T06:22:43.000Z</published>
-    <updated>2026-10-18T14:05:06.061Z</updated>
+    <updated>2026-10-22T02:49:44.004Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;基于零成本准入机制的自动衣物清洁终端插件使用全周期操作规范研究指南&quot;&gt;&lt;a href=&quot;#基于零成本准入机制的自动衣物清洁终端插件使用全周期操作规范研究指南&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+    <summary type="html">&lt;h1 id=&quot;基于零成本准入机制的自动衣物清洁终端插件使用全周期操作规范研究指南&quot;&gt;&lt;a href=&quot;#基于零成本准入机制的自动衣物清洁终端插件使用全周期操作规范研究指南&quot; class=&quot;headerlink&quot; title=&quot;基于零成本准入机制的自动衣物清洁终端插件使用全周期操作规范研究指南&quot;&gt;&lt;/a&gt;基于零成本准入机制的自动衣物清洁终端插件使用全周期操作规范研究指南&lt;/h1&gt;&lt;h2 id=&quot;从零到一：基于-STC8G1K08A-的4按键串口发送板设计全流程（PCB-焊接-代码-烧录）&quot;&gt;&lt;a href=&quot;#从零到一：基于-STC8G1K08A-的4按键串口发送板设计全流程（PCB-焊接-代码-烧录）&quot; class=&quot;headerlink&quot; title=&quot;从零到一：基于 STC8G1K08A 的4按键串口发送板设计全流程（PCB/焊接/代码/烧录）&quot;&gt;&lt;/a&gt;从零到一：基于 STC8G1K08A 的4按键串口发送板设计全流程（PCB/焊接/代码/烧录）&lt;/h2&gt;&lt;p&gt;本文记录并分享一个极简且实用的硬件项目：基于 &lt;strong&gt;STC8G1K08A&lt;/strong&gt; 单片机（SOP-8封装），制作一块 5V 供电的独立 4 按键控制板。按下不同按键，能够以 &lt;strong&gt;2400 波特率&lt;/strong&gt; 连续发送指定的 16 进制控制指令。&lt;/p&gt;
+&lt;p&gt;本项目覆盖了从 &lt;strong&gt;原理图设计、PCB 打样、手工焊接、环境搭建、代码编写到冷启动烧录&lt;/strong&gt; 的完整全流程，非常适合单片机初学者和嵌入式开发者作为小型控制组件参考。&lt;/p&gt;</summary>
     
     
     
