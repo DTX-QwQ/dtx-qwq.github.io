@@ -218,6 +218,245 @@ var _hmt = _hmt || [];
     
     
     <article
+  id="post-基于零成本准入机制的自动衣物清洁终端使用全周期操作规范研究指南"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  
+  <div class="article-inner liquid-glass">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2026/10/16/%E5%9F%BA%E4%BA%8E%E9%9B%B6%E6%88%90%E6%9C%AC%E5%87%86%E5%85%A5%E6%9C%BA%E5%88%B6%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A1%A3%E7%89%A9%E6%B8%85%E6%B4%81%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8%E5%85%A8%E5%91%A8%E6%9C%9F%E6%93%8D%E4%BD%9C%E8%A7%84%E8%8C%83%E7%A0%94%E7%A9%B6%E6%8C%87%E5%8D%97/Fake-Location/"
+    >基于零成本准入机制的自动衣物清洁终端插件使用全周期操作规范研究指南</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2026/10/16/%E5%9F%BA%E4%BA%8E%E9%9B%B6%E6%88%90%E6%9C%AC%E5%87%86%E5%85%A5%E6%9C%BA%E5%88%B6%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A1%A3%E7%89%A9%E6%B8%85%E6%B4%81%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8%E5%85%A8%E5%91%A8%E6%9C%9F%E6%93%8D%E4%BD%9C%E8%A7%84%E8%8C%83%E7%A0%94%E7%A9%B6%E6%8C%87%E5%8D%97/Fake-Location/" class="article-date">
+  <time datetime="2026-10-16T06:22:43.000Z" itemprop="datePublished">2026-10-16</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E7%A0%B4%E8%A7%A3/">破解</a>
+  </div>
+   
+    </div>
+     
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="基于零成本准入机制的自动衣物清洁终端插件使用全周期操作规范研究指南"><a href="#基于零成本准入机制的自动衣物清洁终端插件使用全周期操作规范研究指南" class="headerlink" title="基于零成本准入机制的自动衣物清洁终端插件使用全周期操作规范研究指南"></a>基于零成本准入机制的自动衣物清洁终端插件使用全周期操作规范研究指南</h1><h2 id="从零到一：基于-STC8G1K08A-的4按键串口发送板设计全流程（PCB-焊接-代码-烧录）"><a href="#从零到一：基于-STC8G1K08A-的4按键串口发送板设计全流程（PCB-焊接-代码-烧录）" class="headerlink" title="从零到一：基于 STC8G1K08A 的4按键串口发送板设计全流程（PCB/焊接/代码/烧录）"></a>从零到一：基于 STC8G1K08A 的4按键串口发送板设计全流程（PCB/焊接/代码/烧录）</h2><p>本文记录并分享一个极简且实用的硬件项目：基于 <strong>STC8G1K08A</strong> 单片机（SOP-8封装），制作一块 5V 供电的独立 4 按键控制板。按下不同按键，能够以 <strong>2400 波特率</strong> 连续发送指定的 16 进制控制指令。</p>
+<p>本项目覆盖了从 <strong>原理图设计、PCB 打样、手工焊接、环境搭建、代码编写到冷启动烧录</strong> 的完整全流程，非常适合单片机初学者和嵌入式开发者作为小型控制组件参考。</p>
+<hr>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li><a href="#1-%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%94%B5%E8%B7%AF%E8%A7%84%E5%88%92">硬件设计与电路规划</a></li>
+<li><a href="#2-pcb-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%89%93%E6%A0%B7%E8%A6%81%E7%82%B9">PCB 设计与打样要点</a></li>
+<li><a href="#3-%E5%85%83%E5%99%A8%E4%BB%B6%E6%B8%85%E5%8D%95%E4%B8%8E%E7%84%8A%E6%8E%A5%E5%AE%9E%E6%88%98">元器件清单与焊接实战</a></li>
+<li><a href="#4-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B8%8E%E7%BC%96%E8%AF%91%E5%89%8D%E7%BD%AE%E5%87%86%E5%A4%87">开发环境与编译前置准备</a></li>
+<li><a href="#5-c-%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E6%BA%90%E7%A0%81%E4%B8%8E%E7%BC%96%E8%AF%91">C 语言程序源码与编译</a></li>
+<li><a href="#6-%E5%9C%A8%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8Bisp%E7%83%A7%E5%BD%95%E4%B8%8E%E6%A0%B8%E5%BF%83%E9%81%BF%E5%9D%91%E7%82%B9">在系统编程（ISP）烧录与核心避坑点</a></li>
+<li><a href="#7-%E5%8A%9F%E8%83%BD%E9%AA%8C%E8%AF%81%E4%B8%8E%E4%B8%B2%E5%8F%A3%E6%B5%8B%E8%AF%95">功能验证与串口测试</a></li>
+<li><a href="#8-%E4%BA%A7%E7%89%A9%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8">产物安装与使用</a></li>
+</ol>
+<hr>
+<h2 id="1-硬件设计与电路规划"><a href="#1-硬件设计与电路规划" class="headerlink" title="1. 硬件设计与电路规划"></a>1. 硬件设计与电路规划</h2><h3 id="1-1-需求说明"><a href="#1-1-需求说明" class="headerlink" title="1.1 需求说明"></a>1.1 需求说明</h3><ul>
+<li>  <strong>供电电压</strong>：DC 5V</li>
+<li>  <strong>通信接口</strong>：标准 UART，波特率 2400 bps，8位数据，无校验，1位停止位</li>
+<li>  <strong>控制输入</strong>：4 个轻触按键</li>
+<li><strong>指令集（十六进制）（来自神秘聊天记录）</strong>：<ul>
+<li>  <strong>按键 1</strong>：<code>AA 06 01 98 03 01 D0 AC</code></li>
+<li>  <strong>按键 2</strong>：<code>AA 06 01 98 02 02 B2 0A</code></li>
+<li>  <strong>按键 3</strong>：<code>AA 06 01 98 01 03 51 C6</code> 随后紧跟 <code>AA 06 00 9F 01 03 09</code></li>
+<li>  <strong>按键 4</strong>：<code>AA 06 01 98 04 00 75 03</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-引脚分配表-STC8G1K08A-SOP-8"><a href="#1-2-引脚分配表-STC8G1K08A-SOP-8" class="headerlink" title="1.2 引脚分配表 (STC8G1K08A SOP-8)"></a>1.2 引脚分配表 (STC8G1K08A SOP-8)</h3><table>
+<thead>
+<tr>
+<th align="left">引脚号</th>
+<th align="left">芯片引脚名称</th>
+<th align="left">硬件连接</th>
+<th align="left">功能说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Pin 1</strong></td>
+<td align="left">P5.4 / RST</td>
+<td align="left">按键 1 (另一端接 GND)</td>
+<td align="left">触发发送指令 1</td>
+</tr>
+<tr>
+<td align="left"><strong>Pin 2</strong></td>
+<td align="left">VCC</td>
+<td align="left">5V 电源正极</td>
+<td align="left">系统供电</td>
+</tr>
+<tr>
+<td align="left"><strong>Pin 3</strong></td>
+<td align="left">P5.5 / CMP-</td>
+<td align="left">按键 2 (另一端接 GND)</td>
+<td align="left">触发发送指令 2</td>
+</tr>
+<tr>
+<td align="left"><strong>Pin 4</strong></td>
+<td align="left">GND</td>
+<td align="left">电源负极 (公共地)</td>
+<td align="left">系统参考地</td>
+</tr>
+<tr>
+<td align="left"><strong>Pin 5</strong></td>
+<td align="left">P3.0 / RXD</td>
+<td align="left">预留烧录排针</td>
+<td align="left">程序下载接收端</td>
+</tr>
+<tr>
+<td align="left"><strong>Pin 6</strong></td>
+<td align="left">P3.1 / TXD</td>
+<td align="left">串口输出端 / 预留排针</td>
+<td align="left">信号发送端</td>
+</tr>
+<tr>
+<td align="left"><strong>Pin 7</strong></td>
+<td align="left">P3.2 / INT0</td>
+<td align="left">按键 3 (另一端接 GND)</td>
+<td align="left">触发连续发送指令 3</td>
+</tr>
+<tr>
+<td align="left"><strong>Pin 8</strong></td>
+<td align="left">P3.3 / INT1</td>
+<td align="left">按键 4 (另一端接 GND)</td>
+<td align="left">触发发送指令 4</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>电路设计小技巧</strong>：按键一端直接连单片机引脚，另一端接地。外部不需要接上拉电阻，直接使用 STC8G 内部集成的准双向口/弱上拉电阻即可，极大精简外围元件。</p>
+</blockquote>
+<p><img src="https://i.postimg.cc/hGjbr3XD/Pix-Pin-2026-10-15-21-57-28.png" alt="Pix-Pin-2026-10-15-21-57-28.png"></p>
+<hr>
+<h2 id="2-PCB-设计与打样要点"><a href="#2-PCB-设计与打样要点" class="headerlink" title="2. PCB 设计与打样要点"></a>2. PCB 设计与打样要点</h2><p>在绘制 PCB 时，为了方便后续的烧录和接线，有两点需要特别注意：</p>
+<ol>
+<li><del><strong>电源滤波</strong>：在芯片的 Pin 2 (VCC) 和 Pin 4 (GND) 之间，尽量靠近芯片放置一颗 0.1μF (104) 贴片电容，滤除高频噪声</del>（如果觉得贴片焊接麻烦可以不加，不影响本项目功能实现）。</li>
+<li><strong>下载/调试接口</strong>：一定要从 <strong>Pin 2 (VCC)、Pin 4 (GND)、Pin 5 (RXD)、Pin 6 (TXD)</strong> 引出一个 4-Pin 的 2.54mm 排针接口（标记为 <code>VCC, GND, TX, RX</code>），方便我们后续使用 USB-TTL 烧录器。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://oshwhub.com/dtx-qwq/project_fftrgahv">设计好的板子（没加滤波电容）</a><br>完成设计后导出 Gerber 文件，直接在嘉立创等打样平台下单即可。</p>
+<p><img src="https://i.postimg.cc/k4HSfnkz/Pix-Pin-2026-10-16-12-31-03.png" alt="PCB"></p>
+<hr>
+<h2 id="3-元器件清单与焊接实战"><a href="#3-元器件清单与焊接实战" class="headerlink" title="3. 元器件清单与焊接实战"></a>3. 元器件清单与焊接实战</h2><h3 id="3-1-BOM-清单"><a href="#3-1-BOM-清单" class="headerlink" title="3.1 BOM 清单"></a>3.1 BOM 清单</h3><ul>
+<li>  <strong>STC8G1K08A-8Pin (SOP-8)</strong> × 1</li>
+<li>  <strong>轻触按键 (6×6mm 或贴片按键)</strong> × 4</li>
+<li>  <del><strong>0.1μF 0805 贴片电容</strong> × 1</del></li>
+<li>  <strong>2.54mm 单排针</strong> × 若干</li>
+</ul>
+<h3 id="3-2-焊接步骤"><a href="#3-2-焊接步骤" class="headerlink" title="3.2 焊接步骤"></a>3.2 焊接步骤</h3><ol>
+<li> <strong>先矮后高</strong>：<del>首先焊接 0.1μF 电容</del>，其次焊接 SOP-8 芯片。芯片焊接时注意 Pin 1 的小圆点丝印标识，切勿焊反。</li>
+<li> <strong>焊接开关与接口</strong>：焊接 4 个轻触按键以及外部连接用的排针。</li>
+<li> <strong>短路测试</strong>：<strong>在通电前，务必使用万用表蜂鸣档测量 VCC 与 GND 之间是否短路！</strong> 确认无短路后方可进入下一步。</li>
+</ol>
+<p><img src="https://i.postimg.cc/qRFKjk9W/Pix-Pin-2026-10-15-22-05-03.png" alt="渲染图"></p>
+<hr>
+<h2 id="4-开发环境与编译前置准备"><a href="#4-开发环境与编译前置准备" class="headerlink" title="4. 开发环境与编译前置准备"></a>4. 开发环境与编译前置准备</h2><h3 id="4-1-安装必要工具"><a href="#4-1-安装必要工具" class="headerlink" title="4.1 安装必要工具"></a>4.1 安装必要工具</h3><ul>
+<li>  **Keil uVision5 (C51 版本)**：代码编写与编译工具。</li>
+<li>  <strong>STC-ISP 烧录软件</strong>：宏晶官方提供的芯片烧录与配置工具（<a target="_blank" rel="noopener" href="https://stcmicro.com/rar/stc-isp6.96z.rar">官方下载链接</a>）。</li>
+</ul>
+<h3 id="4-2-向-Keil-中添加-STC-器件库"><a href="#4-2-向-Keil-中添加-STC-器件库" class="headerlink" title="4.2 向 Keil 中添加 STC 器件库"></a>4.2 向 Keil 中添加 STC 器件库</h3><p>默认安装的 Keil 中没有 STC 单片机的选型，需要使用 STC-ISP 软件添加：</p>
+<ol>
+<li>打开 <strong>STC-ISP</strong> 软件。</li>
+<li>点击右侧工具栏的 <strong>“Keil仿真设置”</strong> 选项卡。</li>
+<li>点击 <strong>“添加MCU型号到Keil中”</strong>。</li>
+<li>选择你电脑中 Keil 的安装根目录（如 <code>C:\Keil_v5</code>），提示成功即可。</li>
+</ol>
+<p><img src="https://i.postimg.cc/3ws1xFx6/Pix-Pin-2026-10-16-14-11-50.png" alt="Pix-Pin-2026-10-16-14-11-50.png"></p>
+<hr>
+<h2 id="5-C-语言程序源码与编译"><a href="#5-C-语言程序源码与编译" class="headerlink" title="5. C 语言程序源码与编译"></a>5. C 语言程序源码与编译</h2><p>我们采用芯片出厂默认的 **24.000 MHz 内部 RC 振荡器 (IRC)**，并在代码中利用 1T 模式的 Timer 1 精准生成 2400 波特率。</p>
+<h3 id="5-1-完整源码-main-c"><a href="#5-1-完整源码-main-c" class="headerlink" title="5.1 完整源码 (main.c)"></a>5.1 完整源码 (<code>main.c</code>)</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;STC8G.H&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;intrins.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ================= 1. 引脚定义 =================</span></span><br><span class="line">sbit BTN1 = P5^<span class="number">4</span>; <span class="comment">// 按钮1 -&gt; Pin 1</span></span><br><span class="line">sbit BTN2 = P5^<span class="number">5</span>; <span class="comment">// 按钮2 -&gt; Pin 3</span></span><br><span class="line">sbit BTN3 = P3^<span class="number">2</span>; <span class="comment">// 按钮3 -&gt; Pin 7</span></span><br><span class="line">sbit BTN4 = P3^<span class="number">3</span>; <span class="comment">// 按钮4 -&gt; Pin 8</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ================= 2. 待发送的十六进制指令集 =================</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> code data1[]   = &#123;<span class="number">0xAA</span>, <span class="number">0x06</span>, <span class="number">0x01</span>, <span class="number">0x98</span>, <span class="number">0x03</span>, <span class="number">0x01</span>, <span class="number">0xD0</span>, <span class="number">0xAC</span>&#125;; <span class="comment">// 按钮1数据</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> code data2[]   = &#123;<span class="number">0xAA</span>, <span class="number">0x06</span>, <span class="number">0x01</span>, <span class="number">0x98</span>, <span class="number">0x02</span>, <span class="number">0x02</span>, <span class="number">0xB2</span>, <span class="number">0x0A</span>&#125;; <span class="comment">// 按钮2数据</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> code data3_1[] = &#123;<span class="number">0xAA</span>, <span class="number">0x06</span>, <span class="number">0x01</span>, <span class="number">0x98</span>, <span class="number">0x01</span>, <span class="number">0x03</span>, <span class="number">0x51</span>, <span class="number">0xC6</span>&#125;; <span class="comment">// 按钮3数据第1段</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> code data3_2[] = &#123;<span class="number">0xAA</span>, <span class="number">0x06</span>, <span class="number">0x00</span>, <span class="number">0x9F</span>, <span class="number">0x01</span>, <span class="number">0x03</span>, <span class="number">0x09</span>&#125;;       <span class="comment">// 按钮3数据第2段</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> code data4[]   = &#123;<span class="number">0xAA</span>, <span class="number">0x06</span>, <span class="number">0x01</span>, <span class="number">0x98</span>, <span class="number">0x04</span>, <span class="number">0x00</span>, <span class="number">0x75</span>, <span class="number">0x03</span>&#125;; <span class="comment">// 按钮4数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ================= 3. 毫秒级延时函数 (@24.000MHz) =================</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Delay_ms</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> ms)</span> &#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> i, j;</span><br><span class="line">    <span class="keyword">while</span>(ms--) &#123;</span><br><span class="line">        _nop_();</span><br><span class="line">        i = <span class="number">32</span>;</span><br><span class="line">        j = <span class="number">40</span>;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">while</span> (--j);</span><br><span class="line">        &#125; <span class="keyword">while</span> (--i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ================= 4. 串口初始化函数 (2400bps @ 24MHz) =================</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">UART_Init</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    SCON = <span class="number">0x50</span>;  <span class="comment">// 8位可变波特率，允许接收</span></span><br><span class="line">    AUXR |= <span class="number">0x40</span>; <span class="comment">// 定时器1工作在1T模式</span></span><br><span class="line">    AUXR &amp;= <span class="number">0xFE</span>; <span class="comment">// 串口1使用定时器1作为波特率发生器</span></span><br><span class="line">    TMOD &amp;= <span class="number">0x0F</span>; <span class="comment">// 设置定时器1模式</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 重装载值: 65536 - (24000000 / 4 / 2400) = 63036 = 0xF63C</span></span><br><span class="line">    TL1 = <span class="number">0x3C</span>;   </span><br><span class="line">    TH1 = <span class="number">0xF6</span>;   </span><br><span class="line">    </span><br><span class="line">    ET1 = <span class="number">0</span>;      <span class="comment">// 禁止定时器1中断</span></span><br><span class="line">    TR1 = <span class="number">1</span>;      <span class="comment">// 启动定时器1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ================= 5. 数据发送函数 =================</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">UART_SendByte</span><span class="params">(<span class="type">unsigned</span> <span class="type">char</span> dat)</span> &#123;</span><br><span class="line">    SBUF = dat;</span><br><span class="line">    <span class="keyword">while</span> (!TI);  <span class="comment">// 等待发送完毕</span></span><br><span class="line">    TI = <span class="number">0</span>;       <span class="comment">// 清除发送中断标志位</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">UART_SendArray</span><span class="params">(<span class="type">unsigned</span> <span class="type">char</span> *arr, <span class="type">unsigned</span> <span class="type">char</span> len)</span> &#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        UART_SendByte(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ================= 6. 引脚模式初始化 =================</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">GPIO_Init</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 设置按键对应引脚为准双向口模式（带内部上拉）</span></span><br><span class="line">    P3M1 &amp;= ~<span class="number">0x0C</span>; P3M0 &amp;= ~<span class="number">0x0C</span>; <span class="comment">// P3.2, P3.3</span></span><br><span class="line">    P5M1 &amp;= ~<span class="number">0x30</span>; P5M0 &amp;= ~<span class="number">0x30</span>; <span class="comment">// P5.4, P5.5</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ================= 7. 主逻辑 =================</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    GPIO_Init();</span><br><span class="line">    UART_Init();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="comment">// --- 按钮 1 ---</span></span><br><span class="line">        <span class="keyword">if</span> (BTN1 == <span class="number">0</span>) &#123;</span><br><span class="line">            Delay_ms(<span class="number">20</span>); <span class="comment">// 软件消抖</span></span><br><span class="line">            <span class="keyword">if</span> (BTN1 == <span class="number">0</span>) &#123;</span><br><span class="line">                UART_SendArray(data1, <span class="keyword">sizeof</span>(data1));</span><br><span class="line">                <span class="keyword">while</span>(BTN1 == <span class="number">0</span>); <span class="comment">// 松手检测</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// --- 按钮 2 ---</span></span><br><span class="line">        <span class="keyword">if</span> (BTN2 == <span class="number">0</span>) &#123;</span><br><span class="line">            Delay_ms(<span class="number">20</span>); </span><br><span class="line">            <span class="keyword">if</span> (BTN2 == <span class="number">0</span>) &#123;</span><br><span class="line">                UART_SendArray(data2, <span class="keyword">sizeof</span>(data2));</span><br><span class="line">                <span class="keyword">while</span>(BTN2 == <span class="number">0</span>); </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// --- 按钮 3 (连续双包发送) ---</span></span><br><span class="line">        <span class="keyword">if</span> (BTN3 == <span class="number">0</span>) &#123;</span><br><span class="line">            Delay_ms(<span class="number">20</span>); </span><br><span class="line">            <span class="keyword">if</span> (BTN3 == <span class="number">0</span>) &#123;</span><br><span class="line">                UART_SendArray(data3_1, <span class="keyword">sizeof</span>(data3_1));</span><br><span class="line">                Delay_ms(<span class="number">10</span>); <span class="comment">// 帧间微延时，防止接收端黏包</span></span><br><span class="line">                UART_SendArray(data3_2, <span class="keyword">sizeof</span>(data3_2));</span><br><span class="line">                <span class="keyword">while</span>(BTN3 == <span class="number">0</span>); </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// --- 按钮 4 ---</span></span><br><span class="line">        <span class="keyword">if</span> (BTN4 == <span class="number">0</span>) &#123;</span><br><span class="line">            Delay_ms(<span class="number">20</span>); </span><br><span class="line">            <span class="keyword">if</span> (BTN4 == <span class="number">0</span>) &#123;</span><br><span class="line">                UART_SendArray(data4, <span class="keyword">sizeof</span>(data4));</span><br><span class="line">                <span class="keyword">while</span>(BTN4 == <span class="number">0</span>); </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-编译输出-HEX-文件"><a href="#5-2-编译输出-HEX-文件" class="headerlink" title="5.2 编译输出 HEX 文件"></a>5.2 编译输出 HEX 文件</h3><ol>
+<li>打开 Keil 工程，点击菜单栏的 <strong>Project -&gt; Options for Target</strong>（快捷键 <code>Alt + F7</code>）。</li>
+<li>点击 <strong>Output</strong> 标签页，**务必勾选 <code>[√] Create HEX File</code>**。</li>
+<li>点击编译（Build），确保控制台输出 <code>0 Error(s), 0 Warning(s)</code>，工程根目录下此时已生成 <code>.hex</code> 烧录文件（<a target="_blank" rel="noopener" href="https://dtx-qaq.lanzoul.com/ie0Ff4c6h92b">生成好的Hex文件</a>）。</li>
+</ol>
+<hr>
+<h2 id="6-在系统编程（ISP）烧录与核心避坑点"><a href="#6-在系统编程（ISP）烧录与核心避坑点" class="headerlink" title="6. 在系统编程（ISP）烧录与核心避坑点"></a>6. 在系统编程（ISP）烧录与核心避坑点</h2><p>这是最关键的一步，请严格按照以下步骤操作。</p>
+<h3 id="6-1-接线方式"><a href="#6-1-接线方式" class="headerlink" title="6.1 接线方式"></a>6.1 接线方式</h3><p>准备一个 <strong>USB 转 TTL 模块</strong>（如 CH340），使用杜邦线与我们板子上的烧录排针相连：</p>
+<ul>
+<li>  <strong>USB-TTL 的 5V</strong>  &lt;–&gt;  板子的 <strong>VCC</strong>（<strong>注意：此线先不要插上！</strong>）</li>
+<li>  <strong>USB-TTL 的 GND</strong> &lt;–&gt;  板子的 <strong>GND</strong></li>
+<li>  <strong>USB-TTL 的 TXD</strong> &lt;–&gt;  板子的 <strong>RXD (Pin 5)</strong></li>
+<li>  <strong>USB-TTL 的 RXD</strong> &lt;–&gt;  板子的 <strong>TXD (Pin 6)</strong></li>
+</ul>
+<h3 id="6-2-烧录软件参数配置"><a href="#6-2-烧录软件参数配置" class="headerlink" title="6.2 烧录软件参数配置"></a>6.2 烧录软件参数配置</h3><p>打开 STC-ISP 软件：</p>
+<ol>
+<li><strong>单片机型号</strong>：选择 <code>STC8G1K08A</code>。</li>
+<li><strong>串口号</strong>：选择识别到的 CH340 对应的 COM 端口号。</li>
+<li><strong>打开程序文件</strong>：加载刚才 Keil 编译出的 <code>.hex</code> 文件。</li>
+<li><strong>内部 IRC 频率</strong>：输入并选择 <strong><code>24.000</code></strong> MHz。</li>
+<li><strong>极其重要的硬件选项（防翻车必看）</strong>：<ul>
+<li>切换到软件底部的 <strong>【硬件选项】</strong> 页面。</li>
+<li>找到 <strong>“复位脚用作：”</strong> 这一项。</li>
+<li>**必须勾选改为：<code>作普通I/O口 (P5.4)</code>**！</li>
+<li>(解释：如果不改，引脚1出厂默认是硬件复位脚，按下按钮1单片机就会瞬间死机重启，完全无法工作)*。</li>
+</ul>
+</li>
+</ol>
+<h3 id="6-3-执行“冷启动”烧录"><a href="#6-3-执行“冷启动”烧录" class="headerlink" title="6.3 执行“冷启动”烧录"></a>6.3 执行“冷启动”烧录</h3><p>STC 芯片必须经历一次彻底断电再上电的过程才能触发烧录：</p>
+<ol>
+<li>确保此时 <strong>5V (VCC) 处于断开状态</strong>。</li>
+<li>在 STC-ISP 软件右下角，点击 <strong>【下载/编程】</strong> 按钮。</li>
+<li>软件右侧状态栏会滚动显示：<code>正在检测目标单片机 ...</code></li>
+<li><strong>此时将 5V 电源线插上</strong>（或打开供电开关）。</li>
+<li>软件检测到芯片冷启动，绿色的烧录进度条跑动，最后显示 **<code>操作成功 !</code>**。</li>
+</ol>
+<hr>
+<h2 id="7-功能验证与串口测试"><a href="#7-功能验证与串口测试" class="headerlink" title="7. 功能验证与串口测试"></a>7. 功能验证与串口测试</h2><p>烧录完成后，便可脱离烧录器，进行最终的闭环验收测试：</p>
+<ol>
+<li><strong>测试连接</strong>：<ul>
+<li>保持板子正常供电（5V）。</li>
+<li>将板子的 <strong>TXD (Pin 6)</strong> 接到电脑 USB-TTL 的 <strong>RXD</strong>，两者的 <strong>GND 相连共地</strong>。</li>
+</ul>
+</li>
+<li><strong>打开电脑端串口助手</strong>：<ul>
+<li>选择对应串口号。</li>
+<li>波特率设置为 **<code>2400</code>**，数据位 <code>8</code>，停止位 <code>1</code>，无校验。</li>
+<li>勾选 <strong>“十六进制显示 / HEX 显示”</strong>。</li>
+</ul>
+</li>
+<li><strong>按下按键验证</strong>：<ul>
+<li><strong>按下按键 1</strong>：接收到 <code>AA 06 01 98 03 01 D0 AC</code></li>
+<li><strong>按下按键 2</strong>：接收到 <code>AA 06 01 98 02 02 B2 0A</code></li>
+<li><strong>按下按键 3</strong>：接收到 <code>AA 06 01 98 01 03 51 C6 AA 06 00 9F 01 03 09</code></li>
+<li><strong>按下按键 4</strong>：接收到 <code>AA 06 01 98 04 00 75 03</code></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="8-产物安装与使用"><a href="#8-产物安装与使用" class="headerlink" title="8. 产物安装与使用"></a>8. 产物安装与使用</h1><h2 id="！！！务必断电操作！！！"><a href="#！！！务必断电操作！！！" class="headerlink" title="！！！务必断电操作！！！"></a>！！！务必断电操作！！！</h2><p>将自动衣物清洁终端的外壳拆开，内部主要由主板和无线模块组成，二者由串口线连接，断开无线模块接上我们的自制模块即可。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PCB/" rel="tag">PCB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%94%B9%E9%80%A0/" rel="tag">改造</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%87%8D%E5%BA%86%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6/" rel="tag">重庆邮电大学</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
   id="post-邮宝聊天室环境配置"
   class="article article-type-post"
   itemscope
@@ -264,6 +503,64 @@ var _hmt = _hmt || [];
     <footer class="article-footer">
        
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/" rel="tag">前后端分离</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/" rel="tag">环境配置教程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%96%AA%E7%81%AB%E6%9D%AF/" rel="tag">薪火杯</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%87%8D%E5%BA%86%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6/" rel="tag">重庆邮电大学</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
+  id="post-基于Root环境下的Fake Location虚拟定位教程"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  
+  <div class="article-inner liquid-glass">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2024/11/02/%E5%9F%BA%E4%BA%8ERoot%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84Fake%20Location%E8%99%9A%E6%8B%9F%E5%AE%9A%E4%BD%8D%E6%95%99%E7%A8%8B/Fake-Location/"
+    >基于 Root 环境下的 Fake Location 虚拟定位</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/11/02/%E5%9F%BA%E4%BA%8ERoot%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84Fake%20Location%E8%99%9A%E6%8B%9F%E5%AE%9A%E4%BD%8D%E6%95%99%E7%A8%8B/Fake-Location/" class="article-date">
+  <time datetime="2024-11-02T13:59:41.000Z" itemprop="datePublished">2024-11-02</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E7%A0%B4%E8%A7%A3/">破解</a>
+  </div>
+   
+    </div>
+     
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p><strong>文章内含已Root虚拟机资源。</strong></p>
+<p>成功实现虚拟定位后，可实现包括但不限于以下操作：减轻校园跑步打卡压力、游戏改战区、点亮地图/足迹……<br><img src="https://s2.loli.net/2024/03/09/2eWFJYGtjyEfwci.jpg" alt="41d10a457499b9070bc577c17c34a0efa7540f39.jpg"></p> 
+      <a class="article-more-link glass-button" href="/2024/11/02/%E5%9F%BA%E4%BA%8ERoot%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84Fake%20Location%E8%99%9A%E6%8B%9F%E5%AE%9A%E4%BD%8D%E6%95%99%E7%A8%8B/Fake-Location/"
+        >展开全文...</a
+      >
+       
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Root/" rel="tag">Root</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%90%8C%E5%A4%A9%E6%99%BA%E6%85%A7%E6%A0%A1%E5%9B%AD/" rel="tag">同天智慧校园</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A0%B4%E8%A7%A3/" rel="tag">破解</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%87%8D%E5%BA%86%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6/" rel="tag">重庆邮电大学</a></li></ul>
 
     </footer>
   </div>
@@ -641,123 +938,6 @@ var _hmt = _hmt || [];
     
     <footer class="article-footer">
        
-    </footer>
-  </div>
-
-    
- 
-   
-</article>
-
-    
-    <article
-  id="post-关于极域电子教室"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  
-  <div class="article-inner liquid-glass">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2020/10/17/%E5%85%B3%E4%BA%8E%E6%9E%81%E5%9F%9F%E7%94%B5%E5%AD%90%E6%95%99%E5%AE%A4/JIYU/"
-    >关于极域电子教室</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2020/10/17/%E5%85%B3%E4%BA%8E%E6%9E%81%E5%9F%9F%E7%94%B5%E5%AD%90%E6%95%99%E5%AE%A4/JIYU/" class="article-date">
-  <time datetime="2020-10-17T11:51:02.000Z" itemprop="datePublished">2020-10-17</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/%E7%A0%B4%E8%A7%A3/">破解</a>
-  </div>
-   
-    </div>
-     
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="阅前提示"><a href="#阅前提示" class="headerlink" title="阅前提示:"></a>阅前提示:</h1><p>1.在<strong>断连状态</strong>下将<strong>无法</strong>接收教师端发出的文件</p>
-<p>2.在老师讲重点的时候仍然要<strong>注意听讲</strong></p>
-<p>3.在<strong>较长时间</strong>后方法可能会<strong>失效</strong></p>
-<p>4.大部分机房都有<strong>冰点还原精灵</strong>，可以<strong>随便造</strong></p> 
-      <a class="article-more-link glass-button" href="/2020/10/17/%E5%85%B3%E4%BA%8E%E6%9E%81%E5%9F%9F%E7%94%B5%E5%AD%90%E6%95%99%E5%AE%A4/JIYU/"
-        >展开全文...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9E%81%E5%9F%9F%E7%94%B5%E5%AD%90%E6%95%99%E5%AE%A4/" rel="tag">极域电子教室</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-   
-</article>
-
-    
-    <article
-  id="post-MarkDown"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  
-  <div class="article-inner liquid-glass">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2020/10/07/MarkDown/MarkDown/"
-    >MarkDown测试</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2020/10/07/MarkDown/MarkDown/" class="article-date">
-  <time datetime="2020-10-07T14:18:00.000Z" itemprop="datePublished">2020-10-07</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%B5%8B%E8%AF%95%E5%8A%9F%E8%83%BD/">测试功能</a>
-  </div>
-   
-    </div>
-     
-    <div class="article-entry" itemprop="articleBody">
-       
-  <p>本文章用于测试MarkDown效果</p> 
-      <a class="article-more-link glass-button" href="/2020/10/07/MarkDown/MarkDown/"
-        >展开全文...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E5%8A%9F%E8%83%BD/" rel="tag">测试功能</a></li></ul>
-
     </footer>
   </div>
 

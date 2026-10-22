@@ -1,6 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>基于零成本准入机制的自动衣物清洁终端插件使用全周期操作规范研究指南</title>
+    <url>/2026/10/16/%E5%9F%BA%E4%BA%8E%E9%9B%B6%E6%88%90%E6%9C%AC%E5%87%86%E5%85%A5%E6%9C%BA%E5%88%B6%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A1%A3%E7%89%A9%E6%B8%85%E6%B4%81%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8%E5%85%A8%E5%91%A8%E6%9C%9F%E6%93%8D%E4%BD%9C%E8%A7%84%E8%8C%83%E7%A0%94%E7%A9%B6%E6%8C%87%E5%8D%97/Fake-Location/</url>
+    <content><![CDATA[<h1 id="基于零成本准入机制的自动衣物清洁终端插件使用全周期操作规范研究指南"><a href="#基于零成本准入机制的自动衣物清洁终端插件使用全周期操作规范研究指南" class="headerlink" title="基于零成本准入机制的自动衣物清洁终端插件使用全周期操作规范研究指南"></a>基于零成本准入机制的自动衣物清洁终端插件使用全周期操作规范研究指南</h1><h2 id="从零到一：基于-STC8G1K08A-的4按键串口发送板设计全流程（PCB-焊接-代码-烧录）"><a href="#从零到一：基于-STC8G1K08A-的4按键串口发送板设计全流程（PCB-焊接-代码-烧录）" class="headerlink" title="从零到一：基于 STC8G1K08A 的4按键串口发送板设计全流程（PCB/焊接/代码/烧录）"></a>从零到一：基于 STC8G1K08A 的4按键串口发送板设计全流程（PCB/焊接/代码/烧录）</h2><p>本文记录并分享一个极简且实用的硬件项目：基于 <strong>STC8G1K08A</strong> 单片机（SOP-8封装），制作一块 5V 供电的独立 4 按键控制板。按下不同按键，能够以 <strong>2400 波特率</strong> 连续发送指定的 16 进制控制指令。</p>
+<p>本项目覆盖了从 <strong>原理图设计、PCB 打样、手工焊接、环境搭建、代码编写到冷启动烧录</strong> 的完整全流程，非常适合单片机初学者和嵌入式开发者作为小型控制组件参考。</p>
+<hr>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li><a href="#1-%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%94%B5%E8%B7%AF%E8%A7%84%E5%88%92">硬件设计与电路规划</a></li>
+<li><a href="#2-pcb-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%89%93%E6%A0%B7%E8%A6%81%E7%82%B9">PCB 设计与打样要点</a></li>
+<li><a href="#3-%E5%85%83%E5%99%A8%E4%BB%B6%E6%B8%85%E5%8D%95%E4%B8%8E%E7%84%8A%E6%8E%A5%E5%AE%9E%E6%88%98">元器件清单与焊接实战</a></li>
+<li><a href="#4-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B8%8E%E7%BC%96%E8%AF%91%E5%89%8D%E7%BD%AE%E5%87%86%E5%A4%87">开发环境与编译前置准备</a></li>
+<li><a href="#5-c-%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E6%BA%90%E7%A0%81%E4%B8%8E%E7%BC%96%E8%AF%91">C 语言程序源码与编译</a></li>
+<li><a href="#6-%E5%9C%A8%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8Bisp%E7%83%A7%E5%BD%95%E4%B8%8E%E6%A0%B8%E5%BF%83%E9%81%BF%E5%9D%91%E7%82%B9">在系统编程（ISP）烧录与核心避坑点</a></li>
+<li><a href="#7-%E5%8A%9F%E8%83%BD%E9%AA%8C%E8%AF%81%E4%B8%8E%E4%B8%B2%E5%8F%A3%E6%B5%8B%E8%AF%95">功能验证与串口测试</a></li>
+<li><a href="#8-%E4%BA%A7%E7%89%A9%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8">产物安装与使用</a></li>
+</ol>
+<hr>
+<h2 id="1-硬件设计与电路规划"><a href="#1-硬件设计与电路规划" class="headerlink" title="1. 硬件设计与电路规划"></a>1. 硬件设计与电路规划</h2><h3 id="1-1-需求说明"><a href="#1-1-需求说明" class="headerlink" title="1.1 需求说明"></a>1.1 需求说明</h3><ul>
+<li>  <strong>供电电压</strong>：DC 5V</li>
+<li>  <strong>通信接口</strong>：标准 UART，波特率 2400 bps，8位数据，无校验，1位停止位</li>
+<li>  <strong>控制输入</strong>：4 个轻触按键</li>
+<li><strong>指令集（十六进制）（来自神秘聊天记录）</strong>：<ul>
+<li>  <strong>按键 1</strong>：<code>AA 06 01 98 03 01 D0 AC</code></li>
+<li>  <strong>按键 2</strong>：<code>AA 06 01 98 02 02 B2 0A</code></li>
+<li>  <strong>按键 3</strong>：<code>AA 06 01 98 01 03 51 C6</code> 随后紧跟 <code>AA 06 00 9F 01 03 09</code></li>
+<li>  <strong>按键 4</strong>：<code>AA 06 01 98 04 00 75 03</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-引脚分配表-STC8G1K08A-SOP-8"><a href="#1-2-引脚分配表-STC8G1K08A-SOP-8" class="headerlink" title="1.2 引脚分配表 (STC8G1K08A SOP-8)"></a>1.2 引脚分配表 (STC8G1K08A SOP-8)</h3><table>
+<thead>
+<tr>
+<th align="left">引脚号</th>
+<th align="left">芯片引脚名称</th>
+<th align="left">硬件连接</th>
+<th align="left">功能说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Pin 1</strong></td>
+<td align="left">P5.4 / RST</td>
+<td align="left">按键 1 (另一端接 GND)</td>
+<td align="left">触发发送指令 1</td>
+</tr>
+<tr>
+<td align="left"><strong>Pin 2</strong></td>
+<td align="left">VCC</td>
+<td align="left">5V 电源正极</td>
+<td align="left">系统供电</td>
+</tr>
+<tr>
+<td align="left"><strong>Pin 3</strong></td>
+<td align="left">P5.5 / CMP-</td>
+<td align="left">按键 2 (另一端接 GND)</td>
+<td align="left">触发发送指令 2</td>
+</tr>
+<tr>
+<td align="left"><strong>Pin 4</strong></td>
+<td align="left">GND</td>
+<td align="left">电源负极 (公共地)</td>
+<td align="left">系统参考地</td>
+</tr>
+<tr>
+<td align="left"><strong>Pin 5</strong></td>
+<td align="left">P3.0 / RXD</td>
+<td align="left">预留烧录排针</td>
+<td align="left">程序下载接收端</td>
+</tr>
+<tr>
+<td align="left"><strong>Pin 6</strong></td>
+<td align="left">P3.1 / TXD</td>
+<td align="left">串口输出端 / 预留排针</td>
+<td align="left">信号发送端</td>
+</tr>
+<tr>
+<td align="left"><strong>Pin 7</strong></td>
+<td align="left">P3.2 / INT0</td>
+<td align="left">按键 3 (另一端接 GND)</td>
+<td align="left">触发连续发送指令 3</td>
+</tr>
+<tr>
+<td align="left"><strong>Pin 8</strong></td>
+<td align="left">P3.3 / INT1</td>
+<td align="left">按键 4 (另一端接 GND)</td>
+<td align="left">触发发送指令 4</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>电路设计小技巧</strong>：按键一端直接连单片机引脚，另一端接地。外部不需要接上拉电阻，直接使用 STC8G 内部集成的准双向口/弱上拉电阻即可，极大精简外围元件。</p>
+</blockquote>
+<p><img src="https://i.postimg.cc/hGjbr3XD/Pix-Pin-2026-10-15-21-57-28.png" alt="Pix-Pin-2026-10-15-21-57-28.png"></p>
+<hr>
+<h2 id="2-PCB-设计与打样要点"><a href="#2-PCB-设计与打样要点" class="headerlink" title="2. PCB 设计与打样要点"></a>2. PCB 设计与打样要点</h2><p>在绘制 PCB 时，为了方便后续的烧录和接线，有两点需要特别注意：</p>
+<ol>
+<li><del><strong>电源滤波</strong>：在芯片的 Pin 2 (VCC) 和 Pin 4 (GND) 之间，尽量靠近芯片放置一颗 0.1μF (104) 贴片电容，滤除高频噪声</del>（如果觉得贴片焊接麻烦可以不加，不影响本项目功能实现）。</li>
+<li><strong>下载/调试接口</strong>：一定要从 <strong>Pin 2 (VCC)、Pin 4 (GND)、Pin 5 (RXD)、Pin 6 (TXD)</strong> 引出一个 4-Pin 的 2.54mm 排针接口（标记为 <code>VCC, GND, TX, RX</code>），方便我们后续使用 USB-TTL 烧录器。</li>
+</ol>
+<p><a href="https://oshwhub.com/dtx-qwq/project_fftrgahv">设计好的板子（没加滤波电容）</a><br>完成设计后导出 Gerber 文件，直接在嘉立创等打样平台下单即可。</p>
+<p><img src="https://i.postimg.cc/k4HSfnkz/Pix-Pin-2026-10-16-12-31-03.png" alt="PCB"></p>
+<hr>
+<h2 id="3-元器件清单与焊接实战"><a href="#3-元器件清单与焊接实战" class="headerlink" title="3. 元器件清单与焊接实战"></a>3. 元器件清单与焊接实战</h2><h3 id="3-1-BOM-清单"><a href="#3-1-BOM-清单" class="headerlink" title="3.1 BOM 清单"></a>3.1 BOM 清单</h3><ul>
+<li>  <strong>STC8G1K08A-8Pin (SOP-8)</strong> × 1</li>
+<li>  <strong>轻触按键 (6×6mm 或贴片按键)</strong> × 4</li>
+<li>  <del><strong>0.1μF 0805 贴片电容</strong> × 1</del></li>
+<li>  <strong>2.54mm 单排针</strong> × 若干</li>
+</ul>
+<h3 id="3-2-焊接步骤"><a href="#3-2-焊接步骤" class="headerlink" title="3.2 焊接步骤"></a>3.2 焊接步骤</h3><ol>
+<li> <strong>先矮后高</strong>：<del>首先焊接 0.1μF 电容</del>，其次焊接 SOP-8 芯片。芯片焊接时注意 Pin 1 的小圆点丝印标识，切勿焊反。</li>
+<li> <strong>焊接开关与接口</strong>：焊接 4 个轻触按键以及外部连接用的排针。</li>
+<li> <strong>短路测试</strong>：<strong>在通电前，务必使用万用表蜂鸣档测量 VCC 与 GND 之间是否短路！</strong> 确认无短路后方可进入下一步。</li>
+</ol>
+<p><img src="https://i.postimg.cc/qRFKjk9W/Pix-Pin-2026-10-15-22-05-03.png" alt="渲染图"></p>
+<hr>
+<h2 id="4-开发环境与编译前置准备"><a href="#4-开发环境与编译前置准备" class="headerlink" title="4. 开发环境与编译前置准备"></a>4. 开发环境与编译前置准备</h2><h3 id="4-1-安装必要工具"><a href="#4-1-安装必要工具" class="headerlink" title="4.1 安装必要工具"></a>4.1 安装必要工具</h3><ul>
+<li>  **Keil uVision5 (C51 版本)**：代码编写与编译工具。</li>
+<li>  <strong>STC-ISP 烧录软件</strong>：宏晶官方提供的芯片烧录与配置工具（<a href="https://stcmicro.com/rar/stc-isp6.96z.rar">官方下载链接</a>）。</li>
+</ul>
+<h3 id="4-2-向-Keil-中添加-STC-器件库"><a href="#4-2-向-Keil-中添加-STC-器件库" class="headerlink" title="4.2 向 Keil 中添加 STC 器件库"></a>4.2 向 Keil 中添加 STC 器件库</h3><p>默认安装的 Keil 中没有 STC 单片机的选型，需要使用 STC-ISP 软件添加：</p>
+<ol>
+<li>打开 <strong>STC-ISP</strong> 软件。</li>
+<li>点击右侧工具栏的 <strong>“Keil仿真设置”</strong> 选项卡。</li>
+<li>点击 <strong>“添加MCU型号到Keil中”</strong>。</li>
+<li>选择你电脑中 Keil 的安装根目录（如 <code>C:\Keil_v5</code>），提示成功即可。</li>
+</ol>
+<p><img src="https://i.postimg.cc/3ws1xFx6/Pix-Pin-2026-10-16-14-11-50.png" alt="Pix-Pin-2026-10-16-14-11-50.png"></p>
+<hr>
+<h2 id="5-C-语言程序源码与编译"><a href="#5-C-语言程序源码与编译" class="headerlink" title="5. C 语言程序源码与编译"></a>5. C 语言程序源码与编译</h2><p>我们采用芯片出厂默认的 **24.000 MHz 内部 RC 振荡器 (IRC)**，并在代码中利用 1T 模式的 Timer 1 精准生成 2400 波特率。</p>
+<h3 id="5-1-完整源码-main-c"><a href="#5-1-完整源码-main-c" class="headerlink" title="5.1 完整源码 (main.c)"></a>5.1 完整源码 (<code>main.c</code>)</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;STC8G.H&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;intrins.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ================= 1. 引脚定义 =================</span></span><br><span class="line">sbit BTN1 = P5^<span class="number">4</span>; <span class="comment">// 按钮1 -&gt; Pin 1</span></span><br><span class="line">sbit BTN2 = P5^<span class="number">5</span>; <span class="comment">// 按钮2 -&gt; Pin 3</span></span><br><span class="line">sbit BTN3 = P3^<span class="number">2</span>; <span class="comment">// 按钮3 -&gt; Pin 7</span></span><br><span class="line">sbit BTN4 = P3^<span class="number">3</span>; <span class="comment">// 按钮4 -&gt; Pin 8</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ================= 2. 待发送的十六进制指令集 =================</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> code data1[]   = &#123;<span class="number">0xAA</span>, <span class="number">0x06</span>, <span class="number">0x01</span>, <span class="number">0x98</span>, <span class="number">0x03</span>, <span class="number">0x01</span>, <span class="number">0xD0</span>, <span class="number">0xAC</span>&#125;; <span class="comment">// 按钮1数据</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> code data2[]   = &#123;<span class="number">0xAA</span>, <span class="number">0x06</span>, <span class="number">0x01</span>, <span class="number">0x98</span>, <span class="number">0x02</span>, <span class="number">0x02</span>, <span class="number">0xB2</span>, <span class="number">0x0A</span>&#125;; <span class="comment">// 按钮2数据</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> code data3_1[] = &#123;<span class="number">0xAA</span>, <span class="number">0x06</span>, <span class="number">0x01</span>, <span class="number">0x98</span>, <span class="number">0x01</span>, <span class="number">0x03</span>, <span class="number">0x51</span>, <span class="number">0xC6</span>&#125;; <span class="comment">// 按钮3数据第1段</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> code data3_2[] = &#123;<span class="number">0xAA</span>, <span class="number">0x06</span>, <span class="number">0x00</span>, <span class="number">0x9F</span>, <span class="number">0x01</span>, <span class="number">0x03</span>, <span class="number">0x09</span>&#125;;       <span class="comment">// 按钮3数据第2段</span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> code data4[]   = &#123;<span class="number">0xAA</span>, <span class="number">0x06</span>, <span class="number">0x01</span>, <span class="number">0x98</span>, <span class="number">0x04</span>, <span class="number">0x00</span>, <span class="number">0x75</span>, <span class="number">0x03</span>&#125;; <span class="comment">// 按钮4数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ================= 3. 毫秒级延时函数 (@24.000MHz) =================</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Delay_ms</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> ms)</span> &#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> i, j;</span><br><span class="line">    <span class="keyword">while</span>(ms--) &#123;</span><br><span class="line">        _nop_();</span><br><span class="line">        i = <span class="number">32</span>;</span><br><span class="line">        j = <span class="number">40</span>;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">while</span> (--j);</span><br><span class="line">        &#125; <span class="keyword">while</span> (--i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ================= 4. 串口初始化函数 (2400bps @ 24MHz) =================</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">UART_Init</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    SCON = <span class="number">0x50</span>;  <span class="comment">// 8位可变波特率，允许接收</span></span><br><span class="line">    AUXR |= <span class="number">0x40</span>; <span class="comment">// 定时器1工作在1T模式</span></span><br><span class="line">    AUXR &amp;= <span class="number">0xFE</span>; <span class="comment">// 串口1使用定时器1作为波特率发生器</span></span><br><span class="line">    TMOD &amp;= <span class="number">0x0F</span>; <span class="comment">// 设置定时器1模式</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 重装载值: 65536 - (24000000 / 4 / 2400) = 63036 = 0xF63C</span></span><br><span class="line">    TL1 = <span class="number">0x3C</span>;   </span><br><span class="line">    TH1 = <span class="number">0xF6</span>;   </span><br><span class="line">    </span><br><span class="line">    ET1 = <span class="number">0</span>;      <span class="comment">// 禁止定时器1中断</span></span><br><span class="line">    TR1 = <span class="number">1</span>;      <span class="comment">// 启动定时器1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ================= 5. 数据发送函数 =================</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">UART_SendByte</span><span class="params">(<span class="type">unsigned</span> <span class="type">char</span> dat)</span> &#123;</span><br><span class="line">    SBUF = dat;</span><br><span class="line">    <span class="keyword">while</span> (!TI);  <span class="comment">// 等待发送完毕</span></span><br><span class="line">    TI = <span class="number">0</span>;       <span class="comment">// 清除发送中断标志位</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">UART_SendArray</span><span class="params">(<span class="type">unsigned</span> <span class="type">char</span> *arr, <span class="type">unsigned</span> <span class="type">char</span> len)</span> &#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        UART_SendByte(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ================= 6. 引脚模式初始化 =================</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">GPIO_Init</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 设置按键对应引脚为准双向口模式（带内部上拉）</span></span><br><span class="line">    P3M1 &amp;= ~<span class="number">0x0C</span>; P3M0 &amp;= ~<span class="number">0x0C</span>; <span class="comment">// P3.2, P3.3</span></span><br><span class="line">    P5M1 &amp;= ~<span class="number">0x30</span>; P5M0 &amp;= ~<span class="number">0x30</span>; <span class="comment">// P5.4, P5.5</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ================= 7. 主逻辑 =================</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    GPIO_Init();</span><br><span class="line">    UART_Init();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="comment">// --- 按钮 1 ---</span></span><br><span class="line">        <span class="keyword">if</span> (BTN1 == <span class="number">0</span>) &#123;</span><br><span class="line">            Delay_ms(<span class="number">20</span>); <span class="comment">// 软件消抖</span></span><br><span class="line">            <span class="keyword">if</span> (BTN1 == <span class="number">0</span>) &#123;</span><br><span class="line">                UART_SendArray(data1, <span class="keyword">sizeof</span>(data1));</span><br><span class="line">                <span class="keyword">while</span>(BTN1 == <span class="number">0</span>); <span class="comment">// 松手检测</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// --- 按钮 2 ---</span></span><br><span class="line">        <span class="keyword">if</span> (BTN2 == <span class="number">0</span>) &#123;</span><br><span class="line">            Delay_ms(<span class="number">20</span>); </span><br><span class="line">            <span class="keyword">if</span> (BTN2 == <span class="number">0</span>) &#123;</span><br><span class="line">                UART_SendArray(data2, <span class="keyword">sizeof</span>(data2));</span><br><span class="line">                <span class="keyword">while</span>(BTN2 == <span class="number">0</span>); </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// --- 按钮 3 (连续双包发送) ---</span></span><br><span class="line">        <span class="keyword">if</span> (BTN3 == <span class="number">0</span>) &#123;</span><br><span class="line">            Delay_ms(<span class="number">20</span>); </span><br><span class="line">            <span class="keyword">if</span> (BTN3 == <span class="number">0</span>) &#123;</span><br><span class="line">                UART_SendArray(data3_1, <span class="keyword">sizeof</span>(data3_1));</span><br><span class="line">                Delay_ms(<span class="number">10</span>); <span class="comment">// 帧间微延时，防止接收端黏包</span></span><br><span class="line">                UART_SendArray(data3_2, <span class="keyword">sizeof</span>(data3_2));</span><br><span class="line">                <span class="keyword">while</span>(BTN3 == <span class="number">0</span>); </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// --- 按钮 4 ---</span></span><br><span class="line">        <span class="keyword">if</span> (BTN4 == <span class="number">0</span>) &#123;</span><br><span class="line">            Delay_ms(<span class="number">20</span>); </span><br><span class="line">            <span class="keyword">if</span> (BTN4 == <span class="number">0</span>) &#123;</span><br><span class="line">                UART_SendArray(data4, <span class="keyword">sizeof</span>(data4));</span><br><span class="line">                <span class="keyword">while</span>(BTN4 == <span class="number">0</span>); </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-编译输出-HEX-文件"><a href="#5-2-编译输出-HEX-文件" class="headerlink" title="5.2 编译输出 HEX 文件"></a>5.2 编译输出 HEX 文件</h3><ol>
+<li>打开 Keil 工程，点击菜单栏的 <strong>Project -&gt; Options for Target</strong>（快捷键 <code>Alt + F7</code>）。</li>
+<li>点击 <strong>Output</strong> 标签页，**务必勾选 <code>[√] Create HEX File</code>**。</li>
+<li>点击编译（Build），确保控制台输出 <code>0 Error(s), 0 Warning(s)</code>，工程根目录下此时已生成 <code>.hex</code> 烧录文件（<a href="https://dtx-qaq.lanzoul.com/ie0Ff4c6h92b">生成好的Hex文件</a>）。</li>
+</ol>
+<hr>
+<h2 id="6-在系统编程（ISP）烧录与核心避坑点"><a href="#6-在系统编程（ISP）烧录与核心避坑点" class="headerlink" title="6. 在系统编程（ISP）烧录与核心避坑点"></a>6. 在系统编程（ISP）烧录与核心避坑点</h2><p>这是最关键的一步，请严格按照以下步骤操作。</p>
+<h3 id="6-1-接线方式"><a href="#6-1-接线方式" class="headerlink" title="6.1 接线方式"></a>6.1 接线方式</h3><p>准备一个 <strong>USB 转 TTL 模块</strong>（如 CH340），使用杜邦线与我们板子上的烧录排针相连：</p>
+<ul>
+<li>  <strong>USB-TTL 的 5V</strong>  &lt;–&gt;  板子的 <strong>VCC</strong>（<strong>注意：此线先不要插上！</strong>）</li>
+<li>  <strong>USB-TTL 的 GND</strong> &lt;–&gt;  板子的 <strong>GND</strong></li>
+<li>  <strong>USB-TTL 的 TXD</strong> &lt;–&gt;  板子的 <strong>RXD (Pin 5)</strong></li>
+<li>  <strong>USB-TTL 的 RXD</strong> &lt;–&gt;  板子的 <strong>TXD (Pin 6)</strong></li>
+</ul>
+<h3 id="6-2-烧录软件参数配置"><a href="#6-2-烧录软件参数配置" class="headerlink" title="6.2 烧录软件参数配置"></a>6.2 烧录软件参数配置</h3><p>打开 STC-ISP 软件：</p>
+<ol>
+<li><strong>单片机型号</strong>：选择 <code>STC8G1K08A</code>。</li>
+<li><strong>串口号</strong>：选择识别到的 CH340 对应的 COM 端口号。</li>
+<li><strong>打开程序文件</strong>：加载刚才 Keil 编译出的 <code>.hex</code> 文件。</li>
+<li><strong>内部 IRC 频率</strong>：输入并选择 <strong><code>24.000</code></strong> MHz。</li>
+<li><strong>极其重要的硬件选项（防翻车必看）</strong>：<ul>
+<li>切换到软件底部的 <strong>【硬件选项】</strong> 页面。</li>
+<li>找到 <strong>“复位脚用作：”</strong> 这一项。</li>
+<li>**必须勾选改为：<code>作普通I/O口 (P5.4)</code>**！</li>
+<li>(解释：如果不改，引脚1出厂默认是硬件复位脚，按下按钮1单片机就会瞬间死机重启，完全无法工作)*。</li>
+</ul>
+</li>
+</ol>
+<h3 id="6-3-执行“冷启动”烧录"><a href="#6-3-执行“冷启动”烧录" class="headerlink" title="6.3 执行“冷启动”烧录"></a>6.3 执行“冷启动”烧录</h3><p>STC 芯片必须经历一次彻底断电再上电的过程才能触发烧录：</p>
+<ol>
+<li>确保此时 <strong>5V (VCC) 处于断开状态</strong>。</li>
+<li>在 STC-ISP 软件右下角，点击 <strong>【下载/编程】</strong> 按钮。</li>
+<li>软件右侧状态栏会滚动显示：<code>正在检测目标单片机 ...</code></li>
+<li><strong>此时将 5V 电源线插上</strong>（或打开供电开关）。</li>
+<li>软件检测到芯片冷启动，绿色的烧录进度条跑动，最后显示 **<code>操作成功 !</code>**。</li>
+</ol>
+<hr>
+<h2 id="7-功能验证与串口测试"><a href="#7-功能验证与串口测试" class="headerlink" title="7. 功能验证与串口测试"></a>7. 功能验证与串口测试</h2><p>烧录完成后，便可脱离烧录器，进行最终的闭环验收测试：</p>
+<ol>
+<li><strong>测试连接</strong>：<ul>
+<li>保持板子正常供电（5V）。</li>
+<li>将板子的 <strong>TXD (Pin 6)</strong> 接到电脑 USB-TTL 的 <strong>RXD</strong>，两者的 <strong>GND 相连共地</strong>。</li>
+</ul>
+</li>
+<li><strong>打开电脑端串口助手</strong>：<ul>
+<li>选择对应串口号。</li>
+<li>波特率设置为 **<code>2400</code>**，数据位 <code>8</code>，停止位 <code>1</code>，无校验。</li>
+<li>勾选 <strong>“十六进制显示 / HEX 显示”</strong>。</li>
+</ul>
+</li>
+<li><strong>按下按键验证</strong>：<ul>
+<li><strong>按下按键 1</strong>：接收到 <code>AA 06 01 98 03 01 D0 AC</code></li>
+<li><strong>按下按键 2</strong>：接收到 <code>AA 06 01 98 02 02 B2 0A</code></li>
+<li><strong>按下按键 3</strong>：接收到 <code>AA 06 01 98 01 03 51 C6 AA 06 00 9F 01 03 09</code></li>
+<li><strong>按下按键 4</strong>：接收到 <code>AA 06 01 98 04 00 75 03</code></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="8-产物安装与使用"><a href="#8-产物安装与使用" class="headerlink" title="8. 产物安装与使用"></a>8. 产物安装与使用</h1><h2 id="！！！务必断电操作！！！"><a href="#！！！务必断电操作！！！" class="headerlink" title="！！！务必断电操作！！！"></a>！！！务必断电操作！！！</h2><p>将自动衣物清洁终端的外壳拆开，内部主要由主板和无线模块组成，二者由串口线连接，断开无线模块接上我们的自制模块即可。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>破解</category>
+      </categories>
+      <tags>
+        <tag>重庆邮电大学</tag>
+        <tag>改造</tag>
+        <tag>PCB</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>邮宝聊天室项目运行环境配置</title>
     <url>/2024/11/30/%E9%82%AE%E5%AE%9D%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Fake-Location/</url>
     <content><![CDATA[<p>本教程仅供 <strong>薪火杯组内成员</strong> 配置运行环境的教程，不公开项目源码。</p>
@@ -165,12 +365,110 @@
         <category>开发</category>
       </categories>
       <tags>
+        <tag>重庆邮电大学</tag>
         <tag>前后端分离</tag>
         <tag>Vue</tag>
         <tag>SpringBoot</tag>
-        <tag>重庆邮电大学</tag>
         <tag>薪火杯</tag>
         <tag>环境配置教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于 Root 环境下的 Fake Location 虚拟定位</title>
+    <url>/2024/11/02/%E5%9F%BA%E4%BA%8ERoot%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84Fake%20Location%E8%99%9A%E6%8B%9F%E5%AE%9A%E4%BD%8D%E6%95%99%E7%A8%8B/Fake-Location/</url>
+    <content><![CDATA[<p><strong>文章内含已Root虚拟机资源。</strong></p>
+<p>成功实现虚拟定位后，可实现包括但不限于以下操作：减轻校园跑步打卡压力、游戏改战区、点亮地图/足迹……<br><img src="https://s2.loli.net/2024/03/09/2eWFJYGtjyEfwci.jpg" alt="41d10a457499b9070bc577c17c34a0efa7540f39.jpg"></p>
+<span id="more"></span>
+
+<h1 id="风险警告"><a href="#风险警告" class="headerlink" title="风险警告"></a>风险警告</h1><p><code>在 Root 环境内可能出现的风险，如：账号被冻结/封禁、腾讯 TP 监测无法通过、部分软件不允许在 Root 环境下运行……</code></p>
+<p>在遵循本教程操作前应悉知可能存在的风险，并自行决定是否继续学习操作，对造成的损失作者不负任何责任。</p>
+<p>所有下载的资源仅供学习，请于 24 H 后自行删除。</p>
+<p>本教程为第二版，第一版已失效删除，请配置过第一版的朋友关闭之前老版的模块防止冲突，并按后续步骤更新模块和软件（从第三步开始即可），以更新至第二版方案。</p>
+<hr>
+<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><p>本教程所需的所有资源：<a href="https://www.alipan.com/s/hEwenMJHz3M">阿里云盘资源链接</a></p>
+<p>（超过蓝奏云单次文件大小，只能用阿里云盘了。由于阿里云盘<strong>不支持</strong> .zip 和 .apk 文件分享，所以创建的是自释放程序 .exe ，请在 Windows 端运行解压）。</p>
+<h2 id="第一步-·-安装-影子虚拟机"><a href="#第一步-·-安装-影子虚拟机" class="headerlink" title="第一步 · 安装 影子虚拟机"></a>第一步 · 安装 影子虚拟机</h2><p>安装 <code>影子虚拟机240_美化版_带面具lsp.apk</code> ，这个虚拟机已 Root 并刷入 Magisk 模块与 LSPosed ，可以直接进行下一步。（如果你的手机这个虚拟机软件闪退，请自行寻找解决方法，如：<a href="https://blog.csdn.net/Amy_mumu/article/details/125989066">安卓 12 以上对 APP 进程数量有限制导致虚拟机闪退的解决办法</a>，或自行寻找不闪退的已 ROOT 虚拟机）</p>
+<h2 id="第二步-·-配置虚拟机环境和-Magisk"><a href="#第二步-·-配置虚拟机环境和-Magisk" class="headerlink" title="第二步 · 配置虚拟机环境和 Magisk"></a>第二步 · 配置虚拟机环境和 Magisk</h2><h3 id="配置虚拟机环境"><a href="#配置虚拟机环境" class="headerlink" title="配置虚拟机环境"></a>配置虚拟机环境</h3><ol>
+<li><p>打开虚拟机，按要求赋予<strong>所有权限</strong>（特别是<strong>悬浮窗权限</strong>）。第一次运行需要等待自动配置安卓，会慢一点。</p>
+</li>
+<li><p>进入虚拟机后，可以看到右侧有<strong>蓝色 V 形</strong>悬浮窗。<br><img src="https://s2.loli.net/2024/11/02/smERhZj9DgXNFlw.png" alt="悬浮窗"></p>
+</li>
+<li><p>点击它，打开<strong>设置</strong>。<br><img src="https://s2.loli.net/2024/11/02/xmihrNReYlJsyKQ.png" alt="设置"></p>
+</li>
+<li><p>点击 <strong>Magisk 支持</strong><br><img src="https://s2.loli.net/2024/11/02/WPrHaRZVIn4ESgT.png" alt="面具支持"></p>
+</li>
+<li><p>把灰色滑块<strong>打开</strong>变成蓝色滑块，在弹出的窗口中选择<strong>稍后重启</strong><br><img src="https://s2.loli.net/2024/11/02/p2saNACxzScihHZ.png" alt="开启面具"></p>
+</li>
+<li><p>再回到设置界面，点击<strong>超级用户设置</strong><br><img src="https://s2.loli.net/2024/11/02/e6fEABiku7DxHWT.png" alt="超级用户设置"></p>
+</li>
+<li><p>将蓝色滑块<strong>关闭</strong>成灰色，在弹出的窗口中选择<strong>立即重启</strong><br><img src="https://s2.loli.net/2024/11/02/NlacJ5AGReKI7jn.png" alt="关闭超级用户"></p>
+<h3 id="配置-Magisk"><a href="#配置-Magisk" class="headerlink" title="配置 Magisk"></a>配置 Magisk</h3></li>
+<li><p>待虚拟机重启后，打开 <strong>Magisk 软件</strong>，点击右下角<strong>模块</strong>，<strong>打开所有模块</strong>，随后重启虚拟机<br><img src="https://s2.loli.net/2024/11/02/SD8zZhsqkv73nGm.png" alt="打开模块"></p>
+</li>
+<li><p>待虚拟机重启后，再<strong>打开 Magisk 软件</strong>，确认<strong>所有模块均已启用</strong>，如果掉了，重复<strong>上一步</strong> 直到<strong>重启后</strong>三个模块全为启用状态（后续使用时如果软件没有正常破解，或打开 LSPosed 闪退，请也按<strong>上一步</strong> 检查模块状态）。</p>
+</li>
+</ol>
+<h2 id="第三步-·-导入并安装软件"><a href="#第三步-·-导入并安装软件" class="headerlink" title="第三步 · 导入并安装软件"></a>第三步 · 导入并安装软件</h2><p>打开虚拟机，用桌面右下角<strong>文件中转</strong>功能将 <code>Fake Location.apk</code>、<code>MT管理器.apk</code>、<code>HookVip-3.5.4.apk</code> 3 个安装包全部转入虚拟机并安装。</p>
+<p>由于更新了更强劲的 HookVip 模块，可以<strong>通杀全版本 Fake Location</strong> ，可以直接安装分享的最新版 Fake Location。（请使用 HookVip 的 <strong>3.5.4 版本</strong>，最新版已知会导致<strong>闪退</strong>）</p>
+<h2 id="第四步-·-配置-LSPosed"><a href="#第四步-·-配置-LSPosed" class="headerlink" title="第四步 · 配置 LSPosed"></a>第四步 · 配置 LSPosed</h2><p><code>以下设置是为了破解 Fake Location 以使用高级功能。</code></p>
+<ol>
+<li><p>打开 <strong>LSPosed</strong> ，点击<strong>模块</strong>（你们的应该只有 HookVip 这一个模块，其他模块是我干别的用的，不用理会），点击 <strong>HookVip</strong> 进入设置页面<br><img src="https://s2.loli.net/2024/11/02/3qFhuMDvP4i2JOT.png" alt="进入模块设置"></p>
+</li>
+<li><p>先点<strong>齿轮按钮</strong>打开一下这个模块，如果有提示就按提示操作。然后返回这个界面，<strong>勾选 Fake Location</strong> 即可破解会员权限<br><img src="https://s2.loli.net/2024/11/02/WbX4CIlgLyP6Qjh.png" alt="勾选 Fake Location"></p>
+</li>
+</ol>
+<h2 id="第五步-·-权限设置"><a href="#第五步-·-权限设置" class="headerlink" title="第五步 · 权限设置"></a>第五步 · 权限设置</h2><p>有时使用 Fake Location 会<strong>遇到卡死问题</strong>，这是因为系统权限处于严格状态，改成宽松状态即可，接下来是教程。</p>
+<p>打开 <strong>MT管理器</strong> ，点击左上角三个杠，点击<strong>终端模拟器</strong>，<code>第一次使用可能要安装</code>。</p>
+<p><img src="https://s2.loli.net/2024/03/09/34aVcDvTjAZw7ul.png" alt="权限设置8"></p>
+<ul>
+<li>打开命令行后输入</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">su</span><br></pre></td></tr></table></figure>
+<p>并回车。</p>
+<p>前面的 → 变为 # 说明有效。</p>
+<ul>
+<li>再输入</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">setenforce 0</span><br></pre></td></tr></table></figure>
+
+<p>并回车。</p>
+<p>不提示任何东西，不报错说明成功。请重启虚拟机以确保更改全部应用。</p>
+<p><img src="https://s2.loli.net/2024/03/09/9BSUrWREXzvgkNd.png" alt="权限设置9"></p>
+<h2 id="第六步-·-设置-Fake-Location-系统就绪时间"><a href="#第六步-·-设置-Fake-Location-系统就绪时间" class="headerlink" title="第六步 · 设置 Fake Location 系统就绪时间"></a>第六步 · 设置 Fake Location 系统就绪时间</h2><p>由于默认系统就绪时间太长，可能导致<strong>虚拟机启动后要多等待十几分钟才能开始模拟定位</strong>，所以我们要修改系统就绪时间</p>
+<p>打开 Fake Location ，点击右上角三个杠，点击<strong>设置</strong>，在<strong>系统就绪时间</strong>中设置一个较短的时间，建议为 5000 毫秒（即 5 秒）。</p>
+<p><img src="https://s2.loli.net/2024/11/02/WDsw5GFBiT2OoZ4.png" alt="设置 Fake Location 系统就绪时间"></p>
+<p><code>恭喜你，自此所有设置都已完成，已经可以顺利使用虚拟定位了。接下来是虚拟定位实战举例。</code></p>
+<h1 id="实战运用·同天智慧校园"><a href="#实战运用·同天智慧校园" class="headerlink" title="实战运用·同天智慧校园"></a>实战运用·同天智慧校园</h1><h2 id="使用-Fake-Location-进行体育跑步打卡。"><a href="#使用-Fake-Location-进行体育跑步打卡。" class="headerlink" title="使用 Fake Location 进行体育跑步打卡。"></a>使用 Fake Location 进行体育跑步打卡。</h2><h3 id="定位部分"><a href="#定位部分" class="headerlink" title="定位部分"></a>定位部分</h3><ul>
+<li><p>打开 <strong>Fake Location</strong> ，点击<strong>加号</strong>添加位置，在地图上找到太极运动场，单击<strong>跑道区域（避开禁区）</strong>，点击右下角勾选定位置，点击<strong>启动模拟</strong>。</p>
+</li>
+<li><p>成功启动模拟后，打开<strong>摇杆</strong>，在弹出的<strong>摇杆悬浮窗界面</strong>点击右下方<strong>方块</strong>打开设置，速度设置为<strong>汽车</strong>，打开<strong>步频模拟</strong>和<strong>GPS定位模拟</strong>。</p>
+</li>
+<li><p>打开同天智慧校园开始跑步，使用摇杆将位置调整到要移动的下一个位置，等待路径红线出现（移动时不会出现红线，需要等待，出现红线才代表小程序记录了你的移动），重复操作即可。（由于同天智慧校园的已知问题，可能会有很大几率不记录里程（吞里程），多拉几次总会记上一次的。）</p>
+</li>
+</ul>
+<h3 id="刷脸部分（以太极运动场为例）"><a href="#刷脸部分（以太极运动场为例）" class="headerlink" title="刷脸部分（以太极运动场为例）"></a>刷脸部分（以太极运动场为例）</h3><ul>
+<li><p>开始跑步后，在靠近入口的<strong>第 1 组摄像头</strong>刷<strong>一次脸</strong>，然后横穿操场在<strong>第 2 组摄像头</strong>刷<strong>第二次脸</strong>，然后横穿返回<strong>第 1 组摄像头</strong>刷<strong>第三次脸</strong></p>
+</li>
+<li><p>最后得到 <strong>121</strong> 组合的刷脸结果，即可通过刷脸检测。</p>
+</li>
+</ul>
+<h3 id="结束条件（非常重要）！！！"><a href="#结束条件（非常重要）！！！" class="headerlink" title="结束条件（非常重要）！！！"></a>结束条件（非常重要）！！！</h3><p>三个条件：</p>
+<ul>
+<li><strong>定位部分</strong>程累计到 <strong>2 公里</strong></li>
+<li><strong>刷脸部分已完成</strong></li>
+<li><strong>配速降到 4 分/公里</strong></li>
+</ul>
+<p>三个条件都已达成，即可结束运动。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>破解</category>
+      </categories>
+      <tags>
+        <tag>同天智慧校园</tag>
+        <tag>破解</tag>
+        <tag>重庆邮电大学</tag>
+        <tag>Root</tag>
       </tags>
   </entry>
   <entry>
