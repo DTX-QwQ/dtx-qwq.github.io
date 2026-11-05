@@ -3,7 +3,7 @@
   <entry>
     <title>重邮学评教助手</title>
     <url>/2026/11/05/cqupt-evaluation/CQUPT-EVA/</url>
-    <content><![CDATA[<h1 id="重邮学评教助手"><a href="#重邮学评教助手" class="headerlink" title="重邮学评教助手"></a>重邮学评教助手</h1><p><a href="https://raw.githubusercontent.com/DTX-QwQ/cqupt-evaluation-helper/main/cqupt-evaluation.user.js">安装油猴脚本</a> · <a href="https://github.com/DTX-QwQ/cqupt-evaluation-helper/issues">反馈问题</a></p>
+    <content><![CDATA[<p><a href="https://raw.githubusercontent.com/DTX-QwQ/cqupt-evaluation-helper/main/cqupt-evaluation.user.js">安装油猴脚本</a> · <a href="https://github.com/DTX-QwQ/cqupt-evaluation-helper/issues">反馈问题</a></p>
 <span id="more"></span>
 <p>安装文件：<code>cqupt-evaluation.user.js</code>。在 Tampermonkey（篡改猴）中新建脚本，以本文件的完整内容替换默认模板并保存，刷新教务在线和学评教网页。</p>
 <ol>

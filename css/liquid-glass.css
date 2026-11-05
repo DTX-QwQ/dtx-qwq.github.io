@@ -284,60 +284,11 @@ a.is-active-link { color: var(--c-action); }
 .page-nav a, .page-nav span { float: none !important; border: 0 !important; border-radius: 99px; min-width: 40px; padding: 13px 16px; color: var(--c-content); background: var(--glass-soft); }
 .page-nav .current { background: var(--c-action); color: var(--c-bg); }
 
-/* Forms and content nested inside a lens are flat, with clear borders. */
-#vcomments-box.liquid-glass { padding: 30px; margin-top: 28px; background-color: var(--glass-reading); }
-#vcomments-box .comments-title { margin: 0 0 22px; color: var(--c-content); font-size: 23px; font-weight: 650; line-height: 1.4; }
-#vcomments-box #vcomments,
-#vcomments-box .vwrap,
-#vcomments-box :is(.vcards, .vlist) .vcard .vh,
-#vcomments-box :is(.vcards, .vlist) .vcard .vquote { background: transparent; box-shadow: none; }
-#vcomments-box .v { color: var(--c-content); font-size: 14px; }
-#vcomments-box .v .vwrap { padding: 20px; border: 1px solid var(--glass-line); border-radius: 22px; overflow: visible; }
-#vcomments-box .v .vwrap .vheader { display: flex; gap: 10px; padding: 0; }
-#vcomments-box .v .vwrap .vheader .vinput {
-  flex: 1; min-width: 0; width: 0; padding: 12px 15px;
-  color: var(--c-content); background: var(--glass-soft);
-  border: 1px solid var(--glass-line); border-radius: 99px;
-}
-#vcomments-box .v .vinput { color: var(--c-content); background: transparent; font-family: inherit; }
-#vcomments-box .v .veditor { min-height: 140px; padding: 18px 4px; line-height: 1.8; resize: vertical; border-radius: 14px; }
-#vcomments-box .v .vinput::placeholder { color: var(--c-muted); opacity: .9; }
-#vcomments-box .v .vinput:focus-visible { outline: 2px solid var(--c-action); outline-offset: 2px; }
-#vcomments-box .v .vwrap > .vrow { display: flex; align-items: center; gap: 12px; padding-top: 14px; border-top: 1px solid var(--glass-line); }
-#vcomments-box .v .vwrap > .vrow > .vcol { float: none; width: auto; }
-#vcomments-box .v .vwrap > .vrow > .vcol:last-child { margin-left: auto; }
-#vcomments-box .v .vbtn {
-  padding: 10px 22px; border-radius: 99px;
-  color: var(--c-content); background: var(--glass-soft);
-  border: 1px solid var(--glass-line); font-weight: 600;
-  box-shadow: inset 0 1px 0 color-mix(in srgb,var(--c-light) 50%,transparent), 0 4px 12px #102c4512;
-  transition: background-color 180ms, box-shadow 180ms;
-}
-#vcomments-box .v .vbtn:hover { background: color-mix(in srgb,var(--c-action) 16%,var(--glass-soft)); box-shadow: 0 5px 16px #102c4526; }
-#vcomments-box .v .vicon { fill: var(--c-muted); }
-#vcomments-box .v .vicon:hover { fill: var(--c-action); }
-#vcomments-box .v a { color: var(--c-action); }
-#vcomments-box .v .vinfo,
-#vcomments-box .v :is(.vcards, .vlist) .vcard .vhead .vnick,
-#vcomments-box .v .vcontent,
-#vcomments-box .v .vnum { color: var(--c-content); }
-#vcomments-box .v .vtime,
-#vcomments-box .v .vsys,
-#vcomments-box .v .vempty,
-#vcomments-box .v .vpower,
-#vcomments-box .v .vcount { color: var(--c-muted); }
-#vcomments-box .v :is(.vcards, .vlist) .vcard { padding: 24px 0 0; }
-#vcomments-box .v :is(.vcards, .vlist) .vcard .vh { padding-bottom: 20px; border-bottom-color: var(--glass-line); }
-#vcomments-box .v :is(.vcards, .vlist) .vcard .vquote { padding-left: 18px; margin-left: 4px; border-left: 1px solid var(--glass-line); }
-#vcomments-box .v :is(.vcards, .vlist) .vcard .vimg { border: 1px solid var(--glass-line); border-radius: 50%; }
-#vcomments-box .v :is(.vcards, .vlist) .vcard .vhead :is(.vsys, .vtag) { padding: 3px 8px; border-radius: 99px; background: var(--glass-soft); color: var(--c-muted); }
-#vcomments-box .v .vcontent pre { background: var(--glass-soft); color: var(--c-content); border-radius: 14px; }
-#vcomments-box .v .vcontent code { background: var(--glass-soft); color: var(--c-action); border-radius: 5px; }
-#vcomments-box .v .vcontent blockquote { border-left-color: var(--glass-line); color: var(--c-muted); }
-#vcomments-box .v .vemoji-btn,
-#vcomments-box .v .vpreview-btn { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: var(--glass-soft); }
-#vcomments-box .v .vemojis { padding: 12px; border-radius: 16px; background: var(--glass-soft); }
-#vcomments-box .v .vpreview { border-radius: 16px; padding: 16px; color: var(--c-content); border: 1px solid var(--glass-line); background: transparent; }
+/* Giscus uses an isolated iframe; the outer panel follows the blog theme. */
+#giscus-comments.liquid-glass { padding: 30px; margin-top: 28px; background-color: var(--glass-reading); }
+#giscus-comments .comments-title { margin: 0 0 22px; color: var(--c-content); font-size: 23px; font-weight: 650; line-height: 1.4; }
+#giscus-comments .giscus { min-width: 0; }
+#giscus-comments .giscus-frame { width: 100%; border: 0; }
 .search-form-wrap { z-index: 1010; right: 0; top: -110%; padding: 0 20px; pointer-events: none; }
 .search-form-wrap.on { top: 100px; }
 .local-search.liquid-glass { width: min(760px,100%); max-height: calc(100dvh - 140px); border-radius: 28px; padding: 24px; background-color: var(--glass-reading); pointer-events: auto; }
@@ -398,12 +349,7 @@ a.is-active-link { color: var(--c-action); }
   .archive-article-header h2 .archive-article-title { font-size: 16px; }
   .archive-article-date::before { left: -23px; }
   #friends_link { grid-template-columns: 1fr; gap: 12px; }
-  #vcomments-box.liquid-glass { padding: 20px; border-radius: 26px; }
-  #vcomments-box .v .vwrap { padding: 14px; border-radius: 18px; }
-  #vcomments-box .v .vwrap .vheader { flex-wrap: wrap; gap: 8px; }
-  #vcomments-box .v .vwrap .vheader .vinput { flex: 1 1 100%; width: 100%; }
-  #vcomments-box .v .vwrap > .vrow { flex-wrap: wrap; }
-  #vcomments-box .v :is(.vcards, .vlist) .vcard .vquote { padding-left: 10px; margin-left: 0; }
+  #giscus-comments.liquid-glass { padding: 20px; border-radius: 26px; }
   #music.liquid-glass { bottom: 12px; right: 12px; }
   .float_btns { right: 16px; bottom: 90px; }
   .search-form-wrap.on { top: 80px; }

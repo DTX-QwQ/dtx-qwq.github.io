@@ -6,7 +6,7 @@
   <link href="https://blog.dtx-qwq.xyz/atom.xml" rel="self"/>
   
   <link href="https://blog.dtx-qwq.xyz/"/>
-  <updated>2026-11-05T12:25:21.199Z</updated>
+  <updated>2026-11-05T13:28:34.558Z</updated>
   <id>https://blog.dtx-qwq.xyz/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="https://blog.dtx-qwq.xyz/2026/11/05/cqupt-evaluation/CQUPT-EVA/"/>
     <id>https://blog.dtx-qwq.xyz/2026/11/05/cqupt-evaluation/CQUPT-EVA/</id>
     <published>2026-11-05T11:33:11.000Z</published>
-    <updated>2026-11-05T12:25:21.199Z</updated>
+    <updated>2026-11-05T13:28:34.558Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;重邮学评教助手&quot;&gt;&lt;a href=&quot;#重邮学评教助手&quot; class=&quot;headerlink&quot; title=&quot;重邮学评教助手&quot;&gt;&lt;/a&gt;重邮学评教助手&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/DTX-QwQ/cqupt-evaluation-helper/main/cqupt-evaluation.user.js&quot;&gt;安装油猴脚本&lt;/a&gt; · &lt;a href=&quot;https://github.com/DTX-QwQ/cqupt-evaluation-helper/issues&quot;&gt;反馈问题&lt;/a&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/DTX-QwQ/cqupt-evaluation-helper/main/cqupt-evaluation.user.js&quot;&gt;安装油猴脚本&lt;/a&gt; · &lt;a href=&quot;https://github.com/DTX-QwQ/cqupt-evaluation-helper/issues&quot;&gt;反馈问题&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     
@@ -44,7 +44,7 @@
     <link href="https://blog.dtx-qwq.xyz/2026/10/16/%E5%9F%BA%E4%BA%8E%E9%9B%B6%E6%88%90%E6%9C%AC%E5%87%86%E5%85%A5%E6%9C%BA%E5%88%B6%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A1%A3%E7%89%A9%E6%B8%85%E6%B4%81%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8%E5%85%A8%E5%91%A8%E6%9C%9F%E6%93%8D%E4%BD%9C%E8%A7%84%E8%8C%83%E7%A0%94%E7%A9%B6%E6%8C%87%E5%8D%97/Washing-Machine/"/>
     <id>https://blog.dtx-qwq.xyz/2026/10/16/%E5%9F%BA%E4%BA%8E%E9%9B%B6%E6%88%90%E6%9C%AC%E5%87%86%E5%85%A5%E6%9C%BA%E5%88%B6%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A1%A3%E7%89%A9%E6%B8%85%E6%B4%81%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8%E5%85%A8%E5%91%A8%E6%9C%9F%E6%93%8D%E4%BD%9C%E8%A7%84%E8%8C%83%E7%A0%94%E7%A9%B6%E6%8C%87%E5%8D%97/Washing-Machine/</id>
     <published>2026-10-16T06:22:43.000Z</published>
-    <updated>2026-11-05T11:37:45.495Z</updated>
+    <updated>2026-11-05T13:30:23.149Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;从零到一：基于-STC8G1K08A-的4按键串口发送板设计全流程（PCB-焊接-代码-烧录）&quot;&gt;&lt;a href=&quot;#从零到一：基于-STC8G1K08A-的4按键串口发送板设计全流程（PCB-焊接-代码-烧录）&quot; class=&quot;headerlink&quot; title=&quot;从零到一：基于 STC8G1K08A 的4按键串口发送板设计全流程（PCB/焊接/代码/烧录）&quot;&gt;&lt;/a&gt;从零到一：基于 STC8G1K08A 的4按键串口发送板设计全流程（PCB/焊接/代码/烧录）&lt;/h2&gt;&lt;p&gt;本文记录并分享一个极简且实用的硬件项目：基于 &lt;strong&gt;STC8G1K08A&lt;/strong&gt; 单片机（SOP-8封装），制作一块 5V 供电的独立 4 按键控制板。按下不同按键，能够以 &lt;strong&gt;2400 波特率&lt;/strong&gt; 连续发送指定的 16 进制控制指令。&lt;/p&gt;
@@ -70,7 +70,7 @@
     <link href="https://blog.dtx-qwq.xyz/2024/11/30/%E9%82%AE%E5%AE%9D%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/YouBao/"/>
     <id>https://blog.dtx-qwq.xyz/2024/11/30/%E9%82%AE%E5%AE%9D%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/YouBao/</id>
     <published>2024-11-30T13:59:41.000Z</published>
-    <updated>2026-11-05T11:38:24.774Z</updated>
+    <updated>2026-11-05T13:28:39.747Z</updated>
     
     
     <summary type="html">&lt;p&gt;本教程仅供 &lt;strong&gt;薪火杯组内成员&lt;/strong&gt; 配置运行环境的教程，不公开项目源码。&lt;/p&gt;</summary>
@@ -101,7 +101,7 @@
     <link href="https://blog.dtx-qwq.xyz/2024/11/02/%E5%9F%BA%E4%BA%8ERoot%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84Fake%20Location%E8%99%9A%E6%8B%9F%E5%AE%9A%E4%BD%8D%E6%95%99%E7%A8%8B/Fake-Location/"/>
     <id>https://blog.dtx-qwq.xyz/2024/11/02/%E5%9F%BA%E4%BA%8ERoot%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84Fake%20Location%E8%99%9A%E6%8B%9F%E5%AE%9A%E4%BD%8D%E6%95%99%E7%A8%8B/Fake-Location/</id>
     <published>2024-11-02T13:59:41.000Z</published>
-    <updated>2024-11-03T09:00:38.082Z</updated>
+    <updated>2026-11-05T13:30:19.484Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;文章内含已Root虚拟机资源。&lt;/strong&gt;&lt;/p&gt;
@@ -129,7 +129,7 @@
     <link href="https://blog.dtx-qwq.xyz/2024/07/15/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/BlogMove/"/>
     <id>https://blog.dtx-qwq.xyz/2024/07/15/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/BlogMove/</id>
     <published>2024-07-15T15:34:14.000Z</published>
-    <updated>2024-08-31T04:48:00.000Z</updated>
+    <updated>2026-11-05T13:30:37.064Z</updated>
     
     
       
@@ -160,7 +160,7 @@
     <link href="https://blog.dtx-qwq.xyz/2024/01/01/2024%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/2024%20new%20year/"/>
     <id>https://blog.dtx-qwq.xyz/2024/01/01/2024%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/2024%20new%20year/</id>
     <published>2023-12-31T16:00:00.000Z</published>
-    <updated>2024-01-05T11:34:52.000Z</updated>
+    <updated>2026-11-05T13:30:42.028Z</updated>
     
     
       
@@ -181,7 +181,7 @@
     <link href="https://blog.dtx-qwq.xyz/2023/11/12/FULLWP/CTFFULL/"/>
     <id>https://blog.dtx-qwq.xyz/2023/11/12/FULLWP/CTFFULL/</id>
     <published>2023-11-12T10:36:42.000Z</published>
-    <updated>2023-11-12T10:45:50.000Z</updated>
+    <updated>2026-11-05T13:28:33.163Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;这是重邮-CTF-新生赛“红岩杯”我做出来的题的WP&quot;&gt;&lt;a href=&quot;#这是重邮-CTF-新生赛“红岩杯”我做出来的题的WP&quot; class=&quot;headerlink&quot; title=&quot;这是重邮 CTF 新生赛“红岩杯”我做出来的题的WP&quot;&gt;&lt;/a&gt;这是重邮 CTF 新生赛“红岩杯”我做出来的题的WP&lt;/h1&gt;&lt;p&gt;千辛万苦打了一个星期，结果离三等奖还差91分呜呜呜呜&lt;/p&gt;</summary>
@@ -206,7 +206,7 @@
     <link href="https://blog.dtx-qwq.xyz/2022/11/01/%E6%9E%81%E9%80%92%E4%BA%91%E8%AF%BEWindows%E7%89%88%E8%BE%85%E5%8A%A9%E5%A5%97%E4%BB%B6/gtClass-Auto/"/>
     <id>https://blog.dtx-qwq.xyz/2022/11/01/%E6%9E%81%E9%80%92%E4%BA%91%E8%AF%BEWindows%E7%89%88%E8%BE%85%E5%8A%A9%E5%A5%97%E4%BB%B6/gtClass-Auto/</id>
     <published>2022-11-01T02:51:02.000Z</published>
-    <updated>2024-06-06T16:23:00.000Z</updated>
+    <updated>2026-11-05T13:30:14.457Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;极递云课-自动签到-amp-解除锁屏-amp-显示教师控件-amp-自动上课并切换课堂&quot;&gt;&lt;a href=&quot;#极递云课-自动签到-amp-解除锁屏-amp-显示教师控件-amp-自动上课并切换课堂&quot; class=&quot;headerlink&quot; title=&quot;极递云课 自动签到 &amp;amp; 解除锁屏 &amp;amp; 显示教师控件 &amp;amp; 自动上课并切换课堂&quot;&gt;&lt;/a&gt;极递云课 自动签到 &amp;amp; 解除锁屏 &amp;amp; 显示教师控件 &amp;amp; 自动上课并切换课堂&lt;/h1&gt;&lt;p&gt;&lt;code&gt;“极递云课第三方登录器”仅 合肥皖智中学 可用（不知道莲花校区行不行），其他学校软件会无法正常登陆&lt;/code&gt;&lt;br&gt;&lt;code&gt;“极递云课小助手”普遍适用&lt;/code&gt;&lt;/p&gt;</summary>
@@ -231,7 +231,7 @@
     <link href="https://blog.dtx-qwq.xyz/2021/06/07/%E9%AB%98%E8%80%83%E5%BE%88%E5%A4%A7%EF%BC%8C%E7%94%9F%E6%B4%BB%E6%9B%B4%E5%A4%A7/The%20National%20College%20Entrance%20Examination%20of%202021/"/>
     <id>https://blog.dtx-qwq.xyz/2021/06/07/%E9%AB%98%E8%80%83%E5%BE%88%E5%A4%A7%EF%BC%8C%E7%94%9F%E6%B4%BB%E6%9B%B4%E5%A4%A7/The%20National%20College%20Entrance%20Examination%20of%202021/</id>
     <published>2021-06-07T01:00:00.000Z</published>
-    <updated>2021-07-12T08:08:22.000Z</updated>
+    <updated>2026-11-05T13:30:30.395Z</updated>
     
     
     <summary type="html">&lt;h6 id=&quot;——写在高考日&quot;&gt;&lt;a href=&quot;#——写在高考日&quot; class=&quot;headerlink&quot; title=&quot;——写在高考日&quot;&gt;&lt;/a&gt;——写在高考日&lt;/h6&gt;</summary>
@@ -252,7 +252,7 @@
     <link href="https://blog.dtx-qwq.xyz/2021/01/01/2021%E6%96%B0%E5%B9%B4/2021%20new%20year/"/>
     <id>https://blog.dtx-qwq.xyz/2021/01/01/2021%E6%96%B0%E5%B9%B4/2021%20new%20year/</id>
     <published>2020-12-31T16:00:00.000Z</published>
-    <updated>2021-02-15T13:44:42.000Z</updated>
+    <updated>2026-11-05T13:30:46.433Z</updated>
     
     
       
@@ -273,7 +273,7 @@
     <link href="https://blog.dtx-qwq.xyz/2020/12/31/2020%E7%BA%AA%E5%BF%B5/2020%E7%BA%AA%E5%BF%B5/"/>
     <id>https://blog.dtx-qwq.xyz/2020/12/31/2020%E7%BA%AA%E5%BF%B5/2020%E7%BA%AA%E5%BF%B5/</id>
     <published>2020-12-31T15:59:07.000Z</published>
-    <updated>2021-02-15T13:44:40.000Z</updated>
+    <updated>2026-11-05T13:30:50.098Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;2020：&quot;&gt;&lt;a href=&quot;#2020：&quot; class=&quot;headerlink&quot; title=&quot;2020：&quot;&gt;&lt;/a&gt;2020：&lt;/h1&gt;&lt;p&gt;2020年元旦，UPUPOO转让暴毙&lt;/p&gt;
@@ -289,7 +289,7 @@
     <link href="https://blog.dtx-qwq.xyz/2020/10/17/%E5%85%B3%E4%BA%8E%E6%9E%81%E5%9F%9F%E7%94%B5%E5%AD%90%E6%95%99%E5%AE%A4/JIYU/"/>
     <id>https://blog.dtx-qwq.xyz/2020/10/17/%E5%85%B3%E4%BA%8E%E6%9E%81%E5%9F%9F%E7%94%B5%E5%AD%90%E6%95%99%E5%AE%A4/JIYU/</id>
     <published>2020-10-17T11:51:02.000Z</published>
-    <updated>2020-11-19T11:15:32.000Z</updated>
+    <updated>2026-11-05T13:30:26.697Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;阅前提示&quot;&gt;&lt;a href=&quot;#阅前提示&quot; class=&quot;headerlink&quot; title=&quot;阅前提示:&quot;&gt;&lt;/a&gt;阅前提示:&lt;/h1&gt;&lt;p&gt;1.在&lt;strong&gt;断连状态&lt;/strong&gt;下将&lt;strong&gt;无法&lt;/strong&gt;接收教师端发出的文件&lt;/p&gt;
@@ -315,7 +315,7 @@
     <link href="https://blog.dtx-qwq.xyz/2020/10/07/MarkDown/MarkDown/"/>
     <id>https://blog.dtx-qwq.xyz/2020/10/07/MarkDown/MarkDown/</id>
     <published>2020-10-07T14:18:00.000Z</published>
-    <updated>2021-02-15T13:44:36.000Z</updated>
+    <updated>2026-11-05T13:27:39.398Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文章用于测试MarkDown效果&lt;/p&gt;</summary>
@@ -334,7 +334,7 @@
     <link href="https://blog.dtx-qwq.xyz/2020/10/06/%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/test/"/>
     <id>https://blog.dtx-qwq.xyz/2020/10/06/%E5%9B%BE%E7%89%87%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/test/</id>
     <published>2020-10-06T02:06:00.000Z</published>
-    <updated>2024-03-08T15:30:30.000Z</updated>
+    <updated>2026-11-05T13:30:07.383Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文章用于测试图片插入和B站视频嵌入&lt;/p&gt;</summary>
@@ -353,7 +353,7 @@
     <link href="https://blog.dtx-qwq.xyz/2020/10/04/%E5%BF%86%C2%B7%E6%8A%97%E4%BA%89%E6%97%A0%E9%99%90%E5%AE%9D/Vizpower/"/>
     <id>https://blog.dtx-qwq.xyz/2020/10/04/%E5%BF%86%C2%B7%E6%8A%97%E4%BA%89%E6%97%A0%E9%99%90%E5%AE%9D/Vizpower/</id>
     <published>2020-10-04T11:51:02.000Z</published>
-    <updated>2024-03-06T14:59:10.000Z</updated>
+    <updated>2026-11-05T13:28:46.936Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;来源&quot;&gt;&lt;a href=&quot;#来源&quot; class=&quot;headerlink&quot; title=&quot;来源&quot;&gt;&lt;/a&gt;来源&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;转载自群文件“我们都爱无限宝”&lt;/strong&gt;&lt;/p&gt;
@@ -380,7 +380,7 @@
     <link href="https://blog.dtx-qwq.xyz/2020/08/10/8%C2%B74%E9%BB%8E%E5%B7%B4%E5%AB%A9%E9%A6%96%E9%83%BD%E7%88%86%E7%82%B8%E4%BA%8B%E6%95%85/EITCOL/"/>
     <id>https://blog.dtx-qwq.xyz/2020/08/10/8%C2%B74%E9%BB%8E%E5%B7%B4%E5%AB%A9%E9%A6%96%E9%83%BD%E7%88%86%E7%82%B8%E4%BA%8B%E6%95%85/EITCOL/</id>
     <published>2020-08-10T12:17:42.000Z</published>
-    <updated>2021-07-12T07:54:36.000Z</updated>
+    <updated>2026-11-05T13:30:54.110Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;贝鲁特大爆炸————8·4黎巴嫩首都爆炸事故&quot;&gt;&lt;a href=&quot;#贝鲁特大爆炸————8·4黎巴嫩首都爆炸事故&quot; class=&quot;headerlink&quot; title=&quot;贝鲁特大爆炸————8·4黎巴嫩首都爆炸事故&quot;&gt;&lt;/a&gt;贝鲁特大爆炸————8·4黎巴嫩首都爆炸事故&lt;/h1&gt;&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;2020年8月4日下午6时左右，&lt;strong&gt;黎巴嫩首都&lt;/strong&gt;贝鲁特港口区发生巨大爆炸，爆炸接连发生两次，爆炸威力相当于&lt;strong&gt;广岛原子弹&lt;/strong&gt;爆炸当量的&lt;strong&gt;十分之一&lt;/strong&gt;，导致多栋房屋受损，玻璃被震碎，天上升起红色烟雾 。爆炸发生后，黎巴嫩总理迪亚卜视察爆炸现场，宣布&lt;strong&gt;8月5日&lt;/strong&gt;为&lt;strong&gt;国家哀悼日&lt;/strong&gt; ，并表示黎巴嫩将向国际社会寻求帮助。&lt;/p&gt;
