@@ -30,9 +30,8 @@
   
 <link rel="stylesheet" href="/css/custom.css">
 
-  
-<link rel="stylesheet" href="/css/liquid-glass.css">
-
+  <link rel="stylesheet" href="/css/liquid-glass.css?v=0c38ea800cef" />
+  <link rel="stylesheet" href="/css/comments.css?v=f6efcd1bf743" />
   
 <link rel="stylesheet" href="/css/nbnhhsh.css">
 
@@ -176,9 +175,19 @@ var _hmt = _hmt || [];
 </section>
 
       
-<div class="outer">
-  <section id="giscus-comments" class="liquid-glass" aria-labelledby="comments-title">
-    <h2 id="comments-title" class="comments-title">评论</h2>
+<div class="outer comments-outer">
+  <section id="giscus-comments" class="liquid-glass" aria-labelledby="comments-title" data-state="waiting">
+    <header class="comments-header">
+      <div>
+        <h2 id="comments-title" class="comments-title">留言</h2>
+        <p class="comments-description">欢迎留下你的痕迹哦</p>
+      </div>
+      <a class="comments-github" href="https://github.com/DTX-QwQ/blog-comments/discussions" target="_blank" rel="noopener noreferrer">GitHub 讨论</a>
+    </header>
+    <div class="comments-status" role="status" aria-live="polite">
+      <span class="comments-status-text">滚动到这里时加载评论</span>
+      <button class="comments-retry" type="button" hidden>重新加载</button>
+    </div>
     <div class="giscus"
          data-repo="DTX-QwQ/blog-comments"
          data-repo-id="R_kgDOVj-y6Q"
@@ -190,8 +199,13 @@ var _hmt = _hmt || [];
          data-emit-metadata="0"
          data-input-position="top"
          data-theme="auto"
+         data-theme-light="/css/giscus/light.css?v=5aa367c37cef"
+         data-theme-dark="/css/giscus/dark.css?v=215e5d08340d"
+         data-theme-dim="/css/giscus/dim.css?v=a5a007d57d46"
          data-lang="zh-CN"
-         data-loading="lazy"></div>
+         data-loading="eager"></div>
+    <p class="comments-note">使用 GitHub 账号登录后即可评论 · 支持 Markdown</p>
+    <noscript><p>请启用 JavaScript 加载评论，或通过上方链接前往 GitHub 讨论。</p></noscript>
   </section>
 </div>
 
@@ -586,7 +600,7 @@ var _hmt = _hmt || [];
     
   </div>
   <script src="/js/navigation.js" data-search-path="/search.xml" defer></script>
-  <script src="/js/giscus.js" defer></script>
+  <script src="/js/giscus.js?v=1119f3999097" defer></script>
   <script src="/js/nbnhhsh-loader.js"
     data-vue-src="/js/vendor/vue-2.6.11.min.js"
     data-nbnhhsh-src="/js/vendor/nbnhhsh.user.js" defer></script>

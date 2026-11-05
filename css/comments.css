@@ -1,0 +1,44 @@
+/* The reading surface stays continuous around the isolated Giscus document. */
+main.content > .comments-outer { margin-top: 28px; }
+main.content > .outer:has(+ .comments-outer) { margin-bottom: 0; }
+main.content > .outer:has(> .article) + .comments-outer { margin-left: auto; margin-right: auto; }
+@media (min-width: 1101px) {
+  main.content > .outer:has(> .article > .tocbot) + .comments-outer { width: var(--toc-post-width) !important; }
+}
+@media (min-width: 769px) and (max-width: 1100px) {
+  main.content > .outer:has(> .article) + .comments-outer { width: calc(100% - 272px) !important; }
+}
+#giscus-comments.liquid-glass {
+  box-sizing: border-box;
+  padding: 32px 40px 24px;
+  margin-top: 0;
+  background-color: var(--glass-reading);
+  scroll-margin-top: 24px;
+}
+#giscus-comments .comments-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 22px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--glass-line);
+}
+#giscus-comments .comments-title { margin: 0; font-size: 23px; line-height: 1.5; font-weight: 650; }
+.comments-description { margin: 6px 0 0; color: var(--c-muted); font-size: 14px; line-height: 1.8; }
+.comments-github { flex-shrink: 0; margin-top: 8px; font-size: 13px; text-underline-offset: 4px; }
+.comments-github:hover { text-decoration: underline; }
+#giscus-comments .giscus { min-width: 0; width: 100%; }
+#giscus-comments .giscus-frame { display: block; width: 100%; border: 0; color-scheme: normal; }
+.comments-status { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 20px; margin-bottom: 16px; border: 1px dashed var(--glass-line); border-radius: 16px; color: var(--c-muted); font-size: 14px; line-height: 1.8; }
+.comments-status[hidden], .comments-retry[hidden] { display: none; }
+.comments-retry { border: 1px solid var(--glass-line); border-radius: 999px; padding: 8px 16px; color: var(--c-action); background: var(--glass-soft); }
+.comments-retry:hover { background: var(--glass-reading); }
+.comments-note { margin: 20px 0 0; color: var(--c-muted); font-size: 12px; line-height: 1.8; }
+@media (max-width: 768px) {
+  #giscus-comments.liquid-glass { padding: 24px 20px 20px; border-radius: 26px; }
+  #giscus-comments .comments-header { flex-direction: column; gap: 8px; padding-bottom: 18px; margin-bottom: 20px; }
+  #giscus-comments .comments-title { font-size: 21px; }
+  .comments-github { margin-top: 0; }
+  .comments-status { padding: 16px; }
+}

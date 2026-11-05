@@ -1,0 +1,75 @@
+/*! MIT License
+ * Copyright (c) 2018 GitHub Inc.
+ * https://github.com/primer/primitives/blob/main/LICENSE
+ */main{--color-prettylights-syntax-comment:#768390;--color-prettylights-syntax-constant:#6cb6ff;--color-prettylights-syntax-entity:#dcbdfb;--color-prettylights-syntax-storage-modifier-import:#adbac7;--color-prettylights-syntax-entity-tag:#8ddb8c;--color-prettylights-syntax-keyword:#f47067;--color-prettylights-syntax-string:#96d0ff;--color-prettylights-syntax-variable:#f69d50;--color-prettylights-syntax-brackethighlighter-unmatched:#e5534b;--color-prettylights-syntax-invalid-illegal-text:#cdd9e5;--color-prettylights-syntax-invalid-illegal-bg:#922323;--color-prettylights-syntax-carriage-return-text:#cdd9e5;--color-prettylights-syntax-carriage-return-bg:#ad2e2c;--color-prettylights-syntax-string-regexp:#8ddb8c;--color-prettylights-syntax-markup-list:#eac55f;--color-prettylights-syntax-markup-heading:#316dca;--color-prettylights-syntax-markup-italic:#adbac7;--color-prettylights-syntax-markup-bold:#adbac7;--color-prettylights-syntax-markup-deleted-text:#ffd8d3;--color-prettylights-syntax-markup-deleted-bg:#78191b;--color-prettylights-syntax-markup-inserted-text:#b4f1b4;--color-prettylights-syntax-markup-inserted-bg:#1b4721;--color-prettylights-syntax-markup-changed-text:#ffddb0;--color-prettylights-syntax-markup-changed-bg:#682d0f;--color-prettylights-syntax-markup-ignored-text:#adbac7;--color-prettylights-syntax-markup-ignored-bg:#255ab2;--color-prettylights-syntax-meta-diff-range:#dcbdfb;--color-prettylights-syntax-brackethighlighter-angle:#768390;--color-prettylights-syntax-sublimelinter-gutter-mark:#545d68;--color-prettylights-syntax-constant-other-reference-link:#96d0ff;--color-btn-text:#adbac7;--color-btn-bg:#373e47;--color-btn-border:#cdd9e51a;--color-btn-shadow:0 0 #0000;--color-btn-inset-shadow:0 0 #0000;--color-btn-hover-bg:#444c56;--color-btn-hover-border:#768390;--color-btn-active-bg:#3d444d;--color-btn-active-border:#636e7b;--color-btn-selected-bg:#2d333b;--color-btn-primary-text:#fff;--color-btn-primary-bg:#347d39;--color-btn-primary-border:#cdd9e51a;--color-btn-primary-shadow:0 0 #0000;--color-btn-primary-inset-shadow:0 0 #0000;--color-btn-primary-hover-bg:#46954a;--color-btn-primary-hover-border:#cdd9e51a;--color-btn-primary-selected-bg:#347d39;--color-btn-primary-selected-shadow:0 0 #0000;--color-btn-primary-disabled-text:#cdd9e580;--color-btn-primary-disabled-bg:#347d3999;--color-btn-primary-disabled-border:#cdd9e51a;--color-action-list-item-default-hover-bg:#909dab1f;--color-segmented-control-bg:#636e7b1a;--color-segmented-control-button-bg:#22272e;--color-segmented-control-button-selected-border:#636e7b;--color-fg-default:#adbac7;--color-fg-muted:#768390;--color-fg-subtle:#636e7b;--color-canvas-default:#22272e;--color-canvas-overlay:#2d333b;--color-canvas-inset:#1c2128;--color-canvas-subtle:#2d333b;--color-border-default:#444c56;--color-border-muted:#373e47;--color-neutral-muted:#636e7b66;--color-accent-fg:#539bf5;--color-accent-emphasis:#316dca;--color-accent-muted:#4184e466;--color-accent-subtle:#4184e41a;--color-success-fg:#57ab5a;--color-attention-fg:#c69026;--color-attention-muted:#ae7c1466;--color-attention-subtle:#ae7c1426;--color-danger-fg:#e5534b;--color-danger-muted:#e5534b66;--color-danger-subtle:#e5534b1a;--color-primer-shadow-inset:0 0 #0000;--color-scale-gray-7:#373e47;--color-scale-blue-8:#143d79;
+
+  /*! Extensions from @primer/css/alerts/flash.scss */--color-social-reaction-bg-hover:var(--color-scale-gray-7);--color-social-reaction-bg-reacted-hover:var(--color-scale-blue-8)}main .pagination-loader-container{background-image:url(https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg)}main .gsc-loading-image{background-image:url(https://github.githubassets.com/images/mona-loading-dimmed.gif)}
+/* Palette matches liquid-glass.css. */
+main {
+  --glass-text: #f1f0fc;
+  --glass-muted: #d7d3e9;
+  --glass-accent: #ffc0e3;
+  --glass-button-text: #242a44;
+  --glass-surface: rgba(34,37,64,.45);
+  --glass-overlay: #2c2d49;
+  --glass-inset: rgba(66,58,91,.66);
+  --glass-line: rgba(225,212,246,.26);
+}
+
+/* Ayer glass palette. Base syntax colors: GitHub Primer (MIT), served by Giscus. */
+html, body, main { background: transparent !important; }
+body { font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+main {
+  --color-fg-default: var(--glass-text);
+  --color-fg-muted: var(--glass-muted);
+  --color-fg-subtle: var(--glass-muted);
+  --color-canvas-default: var(--glass-surface);
+  --color-canvas-overlay: var(--glass-overlay);
+  --color-canvas-inset: var(--glass-inset);
+  --color-canvas-subtle: var(--glass-inset);
+  --color-border-default: var(--glass-line);
+  --color-border-muted: var(--glass-line);
+  --color-accent-fg: var(--glass-accent);
+  --color-accent-emphasis: var(--glass-accent);
+  --color-accent-subtle: var(--glass-inset);
+  --color-btn-text: var(--glass-text);
+  --color-btn-bg: var(--glass-surface);
+  --color-btn-border: var(--glass-line);
+  --color-btn-hover-bg: var(--glass-inset);
+  --color-btn-hover-border: var(--glass-accent);
+  --color-btn-primary-bg: var(--glass-accent);
+  --color-btn-primary-text: var(--glass-button-text);
+  --color-btn-primary-hover-bg: var(--glass-accent);
+  --color-btn-primary-selected-bg: var(--glass-accent);
+  --color-btn-primary-disabled-bg: var(--glass-inset);
+  --color-btn-primary-disabled-text: var(--glass-muted);
+  --color-segmented-control-bg: var(--glass-inset);
+  --color-segmented-control-button-bg: var(--glass-surface);
+  --color-segmented-control-button-selected-border: var(--glass-line);
+  --color-social-reaction-bg-hover: var(--glass-inset);
+  --color-social-reaction-bg-reacted-hover: var(--glass-inset);
+}
+.gsc-main { color: var(--glass-text); }
+main .gsc-comment-box:not(.gsc-comment-box-is-reply) { border-radius: 18px; }
+main .gsc-comment-box-tabs { border-radius: 18px 18px 0 0; }
+main .gsc-comment-box-textarea { border-radius: 12px 12px 0 0; min-height: 130px; line-height: 1.8; }
+.gsc-comment-box-textarea::placeholder { color: var(--glass-muted); opacity: 1; }
+main .gsc-comment-box-bottom { border-radius: 0 0 18px 18px; }
+.gsc-comment { border-radius: 16px; }
+.gsc-reactions { padding-top: 0; }
+.gsc-reactions-count, .gsc-comments-count { font-weight: 600; }
+main .gsc-comment-box-buttons .btn { border-radius: 999px; padding: 8px 16px; }
+a { text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--glass-accent); outline-offset: 3px; }
+@media (max-width: 480px) {
+  main .gsc-comment-box-textarea { min-height: 140px; font-size: 16px; }
+  main .gsc-comment-box-buttons .btn { padding: 8px 12px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+main .gsc-reactions { display: flex; flex-direction: row; align-items: center; justify-content: flex-start; gap: 12px; margin-bottom: 20px; padding: 0; }
+main .gsc-main .gsc-reactions > div { flex: 0 0 auto !important; width: auto; margin-top: 0 !important; }
+main .gsc-reactions-count { flex: 0 0 auto; margin: 0; }
+
+main .gsc-comment-box-textarea-extras { border-radius: 0 0 12px 12px; }
+main .gsc-comment-box-buttons > a, main .gsc-comment-box-buttons > button { border-radius: 999px; }

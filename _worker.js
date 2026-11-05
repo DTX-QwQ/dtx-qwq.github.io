@@ -12,6 +12,13 @@ export default {
       });
     }
 
-    return env.ASSETS.fetch(request);
+    const response = await env.ASSETS.fetch(request);
+    // Giscus loads the theme stylesheet from its cross-origin iframe.
+    if (/^\/css\/giscus\/(light|dark|dim)\.css$/.test(url.pathname)) {
+      const themed = new Response(response.body, response);
+      themed.headers.set("Access-Control-Allow-Origin", "*");
+      return themed;
+    }
+    return response;
   }
 };
