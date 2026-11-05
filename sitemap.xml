@@ -2,18 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.dtx-qwq.xyz/2026/10/16/%E5%9F%BA%E4%BA%8E%E9%9B%B6%E6%88%90%E6%9C%AC%E5%87%86%E5%85%A5%E6%9C%BA%E5%88%B6%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A1%A3%E7%89%A9%E6%B8%85%E6%B4%81%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8%E5%85%A8%E5%91%A8%E6%9C%9F%E6%93%8D%E4%BD%9C%E8%A7%84%E8%8C%83%E7%A0%94%E7%A9%B6%E6%8C%87%E5%8D%97/Fake-Location/</loc>
+    <loc>https://blog.dtx-qwq.xyz/2026/11/05/cqupt-evaluation/CQUPT-EVA/</loc>
     
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-05</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.dtx-qwq.xyz/2024/11/30/%E9%82%AE%E5%AE%9D%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Fake-Location/</loc>
+    <loc>https://blog.dtx-qwq.xyz/2024/11/30/%E9%82%AE%E5%AE%9D%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/YouBao/</loc>
     
-    <lastmod>2024-11-30</lastmod>
+    <lastmod>2026-11-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.dtx-qwq.xyz/2026/10/16/%E5%9F%BA%E4%BA%8E%E9%9B%B6%E6%88%90%E6%9C%AC%E5%87%86%E5%85%A5%E6%9C%BA%E5%88%B6%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A1%A3%E7%89%A9%E6%B8%85%E6%B4%81%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8%E5%85%A8%E5%91%A8%E6%9C%9F%E6%93%8D%E4%BD%9C%E8%A7%84%E8%8C%83%E7%A0%94%E7%A9%B6%E6%8C%87%E5%8D%97/Washing-Machine/</loc>
+    
+    <lastmod>2026-11-05</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -217,7 +226,14 @@
   </url>
   
   <url>
-    <loc>https://blog.dtx-qwq.xyz/tags/%E6%B5%8B%E8%AF%95%E5%8A%9F%E8%83%BD/</loc>
+    <loc>https://blog.dtx-qwq.xyz/tags/%E9%87%8D%E5%BA%86%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.dtx-qwq.xyz/tags/%E5%AD%A6%E8%AF%84%E6%95%99/</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -225,6 +241,13 @@
   
   <url>
     <loc>https://blog.dtx-qwq.xyz/tags/%E6%9E%81%E5%9F%9F%E7%94%B5%E5%AD%90%E6%95%99%E5%AE%A4/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.dtx-qwq.xyz/tags/%E6%B5%8B%E8%AF%95%E5%8A%9F%E8%83%BD/</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -245,34 +268,6 @@
   </url>
   
   <url>
-    <loc>https://blog.dtx-qwq.xyz/tags/%E5%90%8C%E5%A4%A9%E6%99%BA%E6%85%A7%E6%A0%A1%E5%9B%AD/</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.dtx-qwq.xyz/tags/%E7%A0%B4%E8%A7%A3/</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.dtx-qwq.xyz/tags/%E9%87%8D%E5%BA%86%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6/</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.dtx-qwq.xyz/tags/Root/</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.dtx-qwq.xyz/tags/%E6%94%B9%E9%80%A0/</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -287,6 +282,27 @@
   </url>
   
   <url>
+    <loc>https://blog.dtx-qwq.xyz/tags/%E5%90%8C%E5%A4%A9%E6%99%BA%E6%85%A7%E6%A0%A1%E5%9B%AD/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.dtx-qwq.xyz/tags/%E7%A0%B4%E8%A7%A3/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.dtx-qwq.xyz/tags/Root/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.dtx-qwq.xyz/tags/%E6%97%A0%E9%99%90%E5%AE%9D/</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -295,20 +311,6 @@
   
   <url>
     <loc>https://blog.dtx-qwq.xyz/tags/%E5%9B%9E%E5%BF%86/</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.dtx-qwq.xyz/tags/%E6%9E%81%E9%80%92%E4%BA%91%E8%AF%BE/</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.dtx-qwq.xyz/tags/%E7%BD%91%E8%AF%BE/</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -350,6 +352,20 @@
   </url>
   
   <url>
+    <loc>https://blog.dtx-qwq.xyz/tags/%E6%9E%81%E9%80%92%E4%BA%91%E8%AF%BE/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.dtx-qwq.xyz/tags/%E7%BD%91%E8%AF%BE/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.dtx-qwq.xyz/tags/%E9%AB%98%E8%80%83/</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -380,13 +396,6 @@
   </url>
   
   <url>
-    <loc>https://blog.dtx-qwq.xyz/categories/%E6%B5%8B%E8%AF%95%E5%8A%9F%E8%83%BD/</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.dtx-qwq.xyz/categories/%E7%BA%AA%E5%AE%9E/%E7%81%BE%E9%9A%BE/</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -394,7 +403,7 @@
   </url>
   
   <url>
-    <loc>https://blog.dtx-qwq.xyz/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://blog.dtx-qwq.xyz/categories/%E6%B5%8B%E8%AF%95%E5%8A%9F%E8%83%BD/</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -408,7 +417,21 @@
   </url>
   
   <url>
+    <loc>https://blog.dtx-qwq.xyz/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.dtx-qwq.xyz/categories/%E6%8A%80%E6%9C%AF/%E7%A0%B4%E8%A7%A3/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.dtx-qwq.xyz/categories/%E6%8A%80%E6%9C%AF/%E8%84%9A%E6%9C%AC/</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
