@@ -1,0 +1,6 @@
+/* Also hide an existing desktop popup after resizing or switching input modes. */
+@media (max-width: 768px), (hover: none), (pointer: coarse) {
+  .nbnhhsh-box-pop {
+    display: none !important;
+  }
+}
