@@ -16,6 +16,9 @@
   var SELECTOR = '.liquid-glass, .glass-button';
   var THEMES = ['light', 'dark', 'dim'];
   var STORAGE_KEY = 'ayer-glass-theme';
+  var systemTheme = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  var manualTheme;
+  try { manualTheme = sessionStorage.getItem(STORAGE_KEY); } catch (error) { /* Private mode. */ }
   var OVERSCAN = 192;
   var MAX_PIXELS = 524288;
   var records = new Map();
@@ -292,10 +295,8 @@
   }
 
   function currentTheme() {
-    var saved;
-    try { saved = localStorage.getItem(STORAGE_KEY); } catch (error) { /* Private mode. */ }
-    return THEMES.indexOf(saved) >= 0 ? saved :
-      (THEMES.indexOf(document.documentElement.dataset.glassTheme) >= 0 ? document.documentElement.dataset.glassTheme : 'light');
+    return THEMES.indexOf(manualTheme) >= 0 ? manualTheme :
+      (systemTheme && systemTheme.matches ? 'dark' : 'light');
   }
 
   function applyTheme(theme, persist) {
@@ -316,7 +317,8 @@
       });
     }
     if (persist) {
-      try { localStorage.setItem(STORAGE_KEY, theme); } catch (error) { /* Private mode. */ }
+      manualTheme = theme;
+      try { sessionStorage.setItem(STORAGE_KEY, theme); } catch (error) { /* Keep the in-memory choice. */ }
     }
     if (theme !== previous) document.dispatchEvent(new CustomEvent('ayer:theme-change', { detail: { theme: theme } }));
   }
@@ -329,9 +331,13 @@
     applyTheme(input.value, true);
   });
 
-  window.addEventListener('storage', function (event) {
-    if (event.key === STORAGE_KEY) applyTheme(currentTheme(), false);
-  });
+  function syncSystemTheme() {
+    if (THEMES.indexOf(manualTheme) < 0) applyTheme(currentTheme(), false);
+  }
+  if (systemTheme) {
+    if (systemTheme.addEventListener) systemTheme.addEventListener('change', syncSystemTheme);
+    else systemTheme.addListener(syncSystemTheme);
+  }
 
   window.addEventListener('scroll', function () {
     if (scrollFrame || suspended) return;

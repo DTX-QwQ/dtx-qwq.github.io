@@ -73,3 +73,44 @@ main .gsc-reactions-count { flex: 0 0 auto; margin: 0; }
 
 main .gsc-comment-box-textarea-extras { border-radius: 0 0 12px 12px; }
 main .gsc-comment-box-buttons > a, main .gsc-comment-box-buttons > button { border-radius: 999px; }
+
+main { color-scheme: dark; }
+
+/* Keep fenced text/code and inline code legible in comments and previews. */
+main .markdown pre,
+main .markdown .highlight pre {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 16px;
+  border: 1px solid var(--glass-line);
+  border-radius: 12px;
+  background: var(--glass-overlay);
+  color: var(--glass-text);
+  overflow-x: auto;
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
+  font: 13px/1.65 Consolas, Monaco, "Courier New", monospace;
+  tab-size: 4;
+}
+main .markdown pre code { padding: 0; border: 0; background: transparent; color: inherit; }
+main .markdown :not(pre) > code,
+main .markdown tt { border: 1px solid var(--glass-line); background: var(--glass-inset); border-radius: 5px; padding: 1px 5px; }
+/* GitHub supplies pl-* tokens; the Primer palette above supplies their colors. */
+main .markdown .pl-s1,
+main .markdown .pl-kos { color: var(--glass-text); }
+
+/* An opaque fallback remains readable even without backdrop-filter support. */
+main .gsc-reactions-popover {
+  z-index: 20;
+  color: var(--glass-text);
+  background: var(--glass-overlay);
+  border: 1px solid var(--glass-line);
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .22);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  backdrop-filter: blur(16px) saturate(130%);
+}
+@supports (background: color-mix(in srgb, white 96%, transparent)) {
+  main .gsc-reactions-popover { background: color-mix(in srgb, var(--glass-overlay) 96%, transparent); }
+}

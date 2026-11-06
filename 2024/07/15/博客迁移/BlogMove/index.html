@@ -30,18 +30,22 @@
   
 <link rel="stylesheet" href="/css/custom.css">
 
-  <link rel="stylesheet" href="/css/liquid-glass.css?v=0c38ea800cef" />
+  <link rel="stylesheet" href="/css/liquid-glass.css?v=e7db613ee614" />
   <link rel="stylesheet" href="/css/comments.css?v=f6efcd1bf743" />
   
 <link rel="stylesheet" href="/css/nbnhhsh.css">
 
   <script>
-    try {
-      var glassTheme = localStorage.getItem('ayer-glass-theme') || 'light';
-      document.documentElement.dataset.glassTheme = /^(light|dark|dim)$/.test(glassTheme) ? glassTheme : 'light';
-    } catch (_) { document.documentElement.dataset.glassTheme = 'light'; }
+    (function () {
+      var saved;
+      try { saved = sessionStorage.getItem('ayer-glass-theme'); } catch (_) { /* Storage may be disabled. */ }
+      var theme = /^(light|dark|dim)$/.test(saved) ? saved :
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.dataset.glassTheme = theme;
+      document.documentElement.style.colorScheme = theme === 'light' ? 'light' : 'dark';
+    })();
   </script>
-  <script defer src="/js/liquid-glass.js"></script>
+  <script defer src="/js/liquid-glass.js?v=bd1e57ee7dd4"></script>
   
   
 <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
@@ -608,18 +612,25 @@ var _hmt = _hmt || [];
     var clipboard;
     window.ayerInitClipboard = function () {
       document.querySelectorAll('.highlight .code pre, .article pre code').forEach(function (code) {
-        if (code.previousElementSibling && code.previousElementSibling.classList.contains('btn-copy')) return;
+        if (code.closest('.code-block')) return;
+        // The button must be outside the element that scrolls horizontally.
+        var block = code.closest('figure.highlight') || code.closest('pre');
+        var wrapper = document.createElement('div');
+        wrapper.className = 'code-block';
+        block.before(wrapper);
+        wrapper.appendChild(block);
         var button = document.createElement('button');
         button.className = 'btn-copy';
         button.type = 'button';
         button.setAttribute('aria-label', '复制代码');
         button.innerHTML = '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
-        code.before(button);
+        button.ayerCodeTarget = code;
+        wrapper.appendChild(button);
       });
       // ClipboardJS delegates clicks, so one instance survives every page change.
       if (clipboard || !window.ClipboardJS) return;
       clipboard = new ClipboardJS('.btn-copy', {
-        target: function (trigger) { return trigger.nextElementSibling; }
+        target: function (trigger) { return trigger.ayerCodeTarget; }
       });
       function feedback(event, success) {
         var button = event.trigger;

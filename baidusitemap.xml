@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.dtx-qwq.xyz/2020/10/07/MarkDown/MarkDown/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
     <loc>https://blog.dtx-qwq.xyz/2020/08/10/8%C2%B74%E9%BB%8E%E5%B7%B4%E5%AB%A9%E9%A6%96%E9%83%BD%E7%88%86%E7%82%B8%E4%BA%8B%E6%95%85/EITCOL/</loc>
     <lastmod>2026-11-05</lastmod>
   </url>
@@ -58,10 +62,6 @@
   </url>
   <url>
     <loc>https://blog.dtx-qwq.xyz/2023/11/12/FULLWP/CTFFULL/</loc>
-    <lastmod>2026-11-05</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.dtx-qwq.xyz/2020/10/07/MarkDown/MarkDown/</loc>
     <lastmod>2026-11-05</lastmod>
   </url>
 </urlset> 
