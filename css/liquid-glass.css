@@ -208,8 +208,11 @@ main.content > .outer { margin-top: 116px; margin-bottom: 100px; }
 .article-entry .btn-copy { border-radius: 99px; padding: 5px 12px; top: 10px; right: 10px; background: #d8eaff; color: #142c45; border: 0; }
 .article-entry .code-block { position: relative; min-width: 0; margin: 10px 0; border-radius: 18px; overflow: hidden; background: #172637; border: 1px solid #ffffff18; }
 .article-entry .code-block > figure.highlight,
-.article-entry .code-block > pre { margin: 0; border: 0; border-radius: 0; padding-top: 44px; }
-.article-entry .code-block .btn-copy { opacity: 1; transition: background-color .2s; }
+.article-entry .code-block > pre { margin: 0; border: 0; border-radius: 0; }
+.article-entry .code-block .btn-copy { top: 6px; right: 8px; padding: 3px 10px; line-height: 20px; opacity: 0; transition: opacity .2s, background-color .2s; }
+.article-entry .code-block:hover .btn-copy,
+.article-entry .code-block:focus-within .btn-copy { opacity: 1; }
+@media (hover: none) { .article-entry .code-block .btn-copy { opacity: 1; } }
 .article-entry table { border-radius: 12px; }
 .article-entry th, .article-entry td { border-color: var(--glass-line); }
 .article-entry th, .article-entry tr:nth-child(even) { background: var(--glass-soft); }
