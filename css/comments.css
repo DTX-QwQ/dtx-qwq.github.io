@@ -29,7 +29,8 @@ main.content > .outer:has(> .article) + .comments-outer { margin-left: auto; mar
 .comments-github { flex-shrink: 0; margin-top: 8px; font-size: 13px; text-underline-offset: 4px; }
 .comments-github:hover { text-decoration: underline; }
 #giscus-comments .giscus { min-width: 0; width: 100%; }
-#giscus-comments .giscus-frame { display: block; width: 100%; border: 0; color-scheme: normal; }
+/* Match the embedded document's root scheme to preserve its transparent canvas. */
+#giscus-comments .giscus-frame { display: block; width: 100%; border: 0; color-scheme: inherit; }
 .comments-status { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 20px; margin-bottom: 16px; border: 1px dashed var(--glass-line); border-radius: 16px; color: var(--c-muted); font-size: 14px; line-height: 1.8; }
 .comments-status[hidden], .comments-retry[hidden] { display: none; }
 .comments-retry { border: 1px solid var(--glass-line); border-radius: 999px; padding: 8px 16px; color: var(--c-action); background: var(--glass-soft); }
